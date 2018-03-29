@@ -1,0 +1,27 @@
+#ifndef ${Class_File_Name}_h__
+#define ${Class_File_Name}_h__
+
+#include "StepBase.h"
+
+namespace XXX
+{
+	class ${Class_File_Name} : public QtUI::CButtonFunctionWidget
+	{
+		Q_OBJECT
+	public:
+		${Class_File_Name}(QWidget* pParent = NULL);
+		~${Class_File_Name}(){}
+
+	public:
+		void init();
+
+	protected Q_SLOTS:
+		
+	private:
+		virtual bool onButtonClicked(const QString& strFunctionButtonName);
+		
+	private:
+	};
+}
+
+#endif // ${Class_File_Name}_h__

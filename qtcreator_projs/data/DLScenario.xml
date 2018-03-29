@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ModuleList>
+  <Module des="" id="1" name="微波中继站_12" nicname="微波中继站_12" type="Dynamic">
+    <Equipments>
+      <Equipment EntityIdentifier="" modtype="" name="" nettype="Microwave">
+        <Parameters>
+          <Par name="power" type="double" value="50.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+          <Par name="netID" type="int" value="6"/>
+          <Par/>
+          <Par name="freq" type="double" value="10.000000GHz"/>
+          <Par name="band" type="double" value="1024.000000kHz"/>
+          <Par name="rate" type="double" value="2048.000000Kbps"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+    </Equipments>
+    <Parameters>
+      <Par name="X" type="double" value="121.143265"/>
+      <Par name="Y" type="double" value="23.816633"/>
+      <Par name="H" type="double" value="0.001000"/>
+      <Par name="forceId" type="int" value="1"/>
+      <Par name="EntityIdentifier" type="string" value="&quot;4ce4fc40-5f0a-45cc-a0bf-1003f680709a&quot;"/>
+      <Par name="trajectoryFile" type="string" value="&quot;&quot;"/>
+    </Parameters>
+  </Module>
+  <Module des="" id="2" name="预警机_7" nicname="预警机_7" type="Dynamic">
+    <Equipments>
+      <Equipment EntityIdentifier="e56a9298-468d-4ac8-b0bf-09dd49bb29c2" modtype="" name="宽带电台_1" nettype="UHF">
+        <Parameters>
+          <Par name="power" type="double" value="50.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+          <Par name="netID" type="int" value="5"/>
+          <Par/>
+          <Par name="mod" type="int" value="1"/>
+          <Par name="freq" type="double" value="500.000000MHz"/>
+          <Par name="freqT" type="int" value="5"/>
+          <Par name="band" type="double" value="1024.000000kHz"/>
+          <Par name="rate" type="double" value="2048.000000Kbps"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+      <Equipment EntityIdentifier="ecda392a-14e4-406f-85e7-0c4dccd5da2f" modtype="" name="卫星终端_1" nettype="Satellite">
+        <Parameters>
+          <Par name="power" type="double" value="50.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+          <Par name="netID" type="int" value="3"/>
+          <Par/>
+          <Par name="freqDN" type="double" value="5.000000GHz"/>
+          <Par name="bandDN" type="double" value="1.000000MHz"/>
+          <Par name="freqUP" type="double" value="2.000000GHz"/>
+          <Par name="bandUP" type="double" value="1.000000MHz"/>
+          <Par name="rate" type="double" value="5.000000Mbps"/>
+          <Par name="EIRP" type="double" value="10.000000"/>
+          <Par name="antennaA" type="double" value="0.000000"/>
+          <Par name="antennaE" type="double" value="0.000000"/>
+          <Par name="cycleLength" type="double" value="0.000000"/>
+          <Par name="slotNum" type="int" value="0"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+      <Equipment EntityIdentifier="d6304a4d-6270-4d5d-9170-5226d65547f0" modtype="" name="Link16电台_1" nettype="Link16">
+        <Parameters>
+          <Par name="power" type="double" value="50.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;qam32&quot;"/>
+          <Par name="netID" type="int" value="7"/>
+          <Par/>
+          <Par name="mod" type="int" value="1"/>
+          <Par name="freq" type="double" value="969.000000MHz"/>
+          <Par name="freqT" type="int" value="0"/>
+          <Par name="band" type="double" value="3000.000000kHz"/>
+          <Par name="rate" type="double" value="107.520000Kbps"/>
+          <Par name="JUType" type="string" value="&quot;SU&quot;"/>
+          <Par name="isRelay" type="bool" value="false"/>
+          <Par name="relayStatus" type="bool" value="0"/>
+          <Par name="isC2JU" type="bool" value="false"/>
+          <Par name="transMode" type="string" value="&quot;NM&quot;"/>
+          <Par name="packingType" type="string" value="&quot;STDP&quot;"/>
+          <Par name="TDLAddr" type="string" value="&quot;auto&quot;"/>
+          <Par name="TrackNumberRange" type="string" value="&quot;&quot;"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+    </Equipments>
+    <Parameters>
+      <Par name="X" type="double" value="122.081284"/>
+      <Par name="Y" type="double" value="23.145929"/>
+      <Par name="H" type="double" value="0.001000"/>
+      <Par name="forceId" type="int" value="2"/>
+      <Par name="EntityIdentifier" type="string" value="&quot;8182403a-a50a-4301-baf7-d57b1337c92f&quot;"/>
+      <Par name="trajectoryFile" type="string" value="&quot;&quot;"/>
+    </Parameters>
+  </Module>
+  <Module des="" id="3" name="微波中继站_13" nicname="微波中继站_13" type="Dynamic">
+    <Equipments>
+      <Equipment EntityIdentifier="" modtype="" name="" nettype="Microwave">
+        <Parameters>
+          <Par name="power" type="double" value="50.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+          <Par name="netID" type="int" value="6"/>
+          <Par/>
+          <Par name="freq" type="double" value="10.000000GHz"/>
+          <Par name="band" type="double" value="1024.000000kHz"/>
+          <Par name="rate" type="double" value="2048.000000Kbps"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+    </Equipments>
+    <Parameters>
+      <Par name="X" type="double" value="120.861488"/>
+      <Par name="Y" type="double" value="23.820660"/>
+      <Par name="H" type="double" value="0.001000"/>
+      <Par name="forceId" type="int" value="3"/>
+      <Par name="EntityIdentifier" type="string" value="&quot;9eb663b9-90ea-477a-bb25-169ce06b8790&quot;"/>
+      <Par name="trajectoryFile" type="string" value="&quot;&quot;"/>
+    </Parameters>
+  </Module>
+  <Module des="" id="4" name="驱逐舰_5" nicname="驱逐舰_5" type="Dynamic">
+    <Equipments>
+      <Equipment EntityIdentifier="51be2335-f0d8-4047-91c8-f2090f8ad969" modtype="" name="超短波电台_1" nettype="VHF">
+        <Parameters>
+          <Par name="power" type="double" value="5.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+          <Par name="netID" type="int" value="4"/>
+          <Par/>
+          <Par name="mod" type="int" value="1"/>
+          <Par name="freq" type="double" value="50.000000MHz"/>
+          <Par name="freqT" type="int" value="4"/>
+          <Par name="band" type="double" value="25.000000kHz"/>
+          <Par name="rate" type="double" value="64.000000Kbps"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+    </Equipments>
+    <Parameters>
+      <Par name="X" type="double" value="121.992729"/>
+      <Par name="Y" type="double" value="23.717539"/>
+      <Par name="H" type="double" value="0.001000"/>
+      <Par name="forceId" type="int" value="4"/>
+      <Par name="EntityIdentifier" type="string" value="&quot;b75d4d1f-a1b1-4c4e-8a51-755d9bec168a&quot;"/>
+      <Par name="trajectoryFile" type="string" value="&quot;&quot;"/>
+    </Parameters>
+  </Module>
+  <Module des="" id="5" name="卫星地面站_9" nicname="卫星地面站_9" type="Dynamic">
+    <Equipments>
+      <Equipment EntityIdentifier="" modtype="" name="" nettype="Satellite">
+        <Parameters>
+          <Par name="power" type="double" value="50.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+          <Par name="netID" type="int" value="3"/>
+          <Par/>
+          <Par name="freqDN" type="double" value="5.000000GHz"/>
+          <Par name="bandDN" type="double" value="1.000000MHz"/>
+          <Par name="freqUP" type="double" value="2.000000GHz"/>
+          <Par name="bandUP" type="double" value="1.000000MHz"/>
+          <Par name="rate" type="double" value="5.000000Mbps"/>
+          <Par name="EIRP" type="double" value="10.000000"/>
+          <Par name="antennaA" type="double" value="0.000000"/>
+          <Par name="antennaE" type="double" value="0.000000"/>
+          <Par name="cycleLength" type="double" value="0.000000"/>
+          <Par name="slotNum" type="int" value="0"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+    </Equipments>
+    <Parameters>
+      <Par name="X" type="double" value="121.312332"/>
+      <Par name="Y" type="double" value="23.804558"/>
+      <Par name="H" type="double" value="0.001000"/>
+      <Par name="forceId" type="int" value="5"/>
+      <Par name="EntityIdentifier" type="string" value="&quot;be3572af-06b2-4fa3-affd-a902ee4bf522&quot;"/>
+      <Par name="trajectoryFile" type="string" value="&quot;&quot;"/>
+    </Parameters>
+  </Module>
+  <Module des="" id="6" name="航空母舰_4" nicname="航空母舰_4" type="Dynamic">
+    <Equipments>
+      <Equipment EntityIdentifier="39a223e6-3bdb-4dc1-92b4-acb52974cf4c" modtype="" name="超短波电台_1" nettype="VHF">
+        <Parameters>
+          <Par name="power" type="double" value="5.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+          <Par name="netID" type="int" value="4"/>
+          <Par/>
+          <Par name="mod" type="int" value="1"/>
+          <Par name="freq" type="double" value="50.000000MHz"/>
+          <Par name="freqT" type="int" value="4"/>
+          <Par name="band" type="double" value="25.000000kHz"/>
+          <Par name="rate" type="double" value="64.000000Kbps"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+      <Equipment EntityIdentifier="0ad60b60-ed8c-4439-8b5e-748a62272afb" modtype="" name="卫星终端_1" nettype="Satellite">
+        <Parameters>
+          <Par name="power" type="double" value="50.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+          <Par name="netID" type="int" value="3"/>
+          <Par/>
+          <Par name="freqDN" type="double" value="5.000000GHz"/>
+          <Par name="bandDN" type="double" value="1.000000MHz"/>
+          <Par name="freqUP" type="double" value="2.000000GHz"/>
+          <Par name="bandUP" type="double" value="1.000000MHz"/>
+          <Par name="rate" type="double" value="5.000000Mbps"/>
+          <Par name="EIRP" type="double" value="10.000000"/>
+          <Par name="antennaA" type="double" value="0.000000"/>
+          <Par name="antennaE" type="double" value="0.000000"/>
+          <Par name="cycleLength" type="double" value="0.000000"/>
+          <Par name="slotNum" type="int" value="0"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+    </Equipments>
+    <Parameters>
+      <Par name="X" type="double" value="121.847809"/>
+      <Par name="Y" type="double" value="23.500166"/>
+      <Par name="H" type="double" value="0.001000"/>
+      <Par name="forceId" type="int" value="6"/>
+      <Par name="EntityIdentifier" type="string" value="&quot;dcb3e759-09f7-4804-97c8-159d877e72a6&quot;"/>
+      <Par name="trajectoryFile" type="string" value="&quot;&quot;"/>
+    </Parameters>
+  </Module>
+  <Module des="" id="7" name="战斗机_6" nicname="战斗机_6" type="Dynamic">
+    <Equipments>
+      <Equipment EntityIdentifier="ac1ea38a-0974-4c2e-9167-b0d1020c1507" modtype="" name="宽带电台_1" nettype="UHF">
+        <Parameters>
+          <Par name="power" type="double" value="50.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+          <Par name="netID" type="int" value="5"/>
+          <Par/>
+          <Par name="mod" type="int" value="1"/>
+          <Par name="freq" type="double" value="500.000000MHz"/>
+          <Par name="freqT" type="int" value="5"/>
+          <Par name="band" type="double" value="1024.000000kHz"/>
+          <Par name="rate" type="double" value="2048.000000Kbps"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+      <Equipment EntityIdentifier="b1905b7e-ac8b-4005-85b9-c26a46315491" modtype="" name="Link16电台_1" nettype="Link16">
+        <Parameters>
+          <Par name="power" type="double" value="50.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;qam32&quot;"/>
+          <Par name="netID" type="int" value="7"/>
+          <Par/>
+          <Par name="mod" type="int" value="1"/>
+          <Par name="freq" type="double" value="969.000000MHz"/>
+          <Par name="freqT" type="int" value="0"/>
+          <Par name="band" type="double" value="3000.000000kHz"/>
+          <Par name="rate" type="double" value="107.520000Kbps"/>
+          <Par name="JUType" type="string" value="&quot;SU&quot;"/>
+          <Par name="isRelay" type="bool" value="false"/>
+          <Par name="relayStatus" type="bool" value="0"/>
+          <Par name="isC2JU" type="bool" value="false"/>
+          <Par name="transMode" type="string" value="&quot;NM&quot;"/>
+          <Par name="packingType" type="string" value="&quot;STDP&quot;"/>
+          <Par name="TDLAddr" type="string" value="&quot;auto&quot;"/>
+          <Par name="TrackNumberRange" type="string" value="&quot;&quot;"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+    </Equipments>
+    <Parameters>
+      <Par name="X" type="double" value="121.384888"/>
+      <Par name="Y" type="double" value="23.234488"/>
+      <Par name="H" type="double" value="0.001000"/>
+      <Par name="forceId" type="int" value="7"/>
+      <Par name="EntityIdentifier" type="string" value="&quot;f48d3777-414e-45d7-88f3-26d70d9e5368&quot;"/>
+      <Par name="trajectoryFile" type="string" value="&quot;&quot;"/>
+    </Parameters>
+  </Module>
+  <Module des="" id="8" name="通信卫星_8" nicname="通信卫星_8" type="Dynamic">
+    <Equipments>
+      <Equipment EntityIdentifier="" modtype="" name="" nettype="Satellite">
+        <Parameters>
+          <Par name="power" type="double" value="50.000000W"/>
+          <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+          <Par name="netID" type="int" value="3"/>
+          <Par/>
+          <Par name="freqDN" type="double" value="5.000000GHz"/>
+          <Par name="bandDN" type="double" value="1.000000MHz"/>
+          <Par name="freqUP" type="double" value="2.000000GHz"/>
+          <Par name="bandUP" type="double" value="1.000000MHz"/>
+          <Par name="rate" type="double" value="5.000000Mbps"/>
+          <Par name="EIRP" type="double" value="10.000000"/>
+          <Par name="antennaA" type="double" value="0.000000"/>
+          <Par name="antennaE" type="double" value="180.000000"/>
+          <Par name="cycleLength" type="double" value="0.640000"/>
+          <Par name="slotNum" type="int" value="32"/>
+        </Parameters>
+        <Services/>
+      </Equipment>
+    </Equipments>
+    <Parameters>
+      <Par name="X" type="double" value="121.098984"/>
+      <Par name="Y" type="double" value="22.653288"/>
+      <Par name="H" type="double" value="0.001000"/>
+      <Par name="forceId" type="int" value="8"/>
+      <Par name="EntityIdentifier" type="string" value="&quot;fb9dc0d9-17b1-4227-9545-a989ee0332d3&quot;"/>
+      <Par name="trajectoryFile" type="string" value="&quot;&quot;"/>
+    </Parameters>
+  </Module>
+  <Structure>
+    <Subnet des="" id="3" mainnetid="3" name="卫星网" stacked="0" type="10001">
+      <Modules>
+        <Module name="预警机_7.卫星终端_1"/>
+        <Module name="卫星地面站_9."/>
+        <Module name="航空母舰_4.卫星终端_1"/>
+        <Module name="通信卫星_8."/>
+      </Modules>
+      <Parameters>
+        <Par name="power" type="double" value="50.000000W"/>
+        <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+        <Par name="netID" type="int" value="3"/>
+        <Par/>
+        <Par name="freqDN" type="double" value="5.000000GHz"/>
+        <Par name="bandDN" type="double" value="1.000000MHz"/>
+        <Par name="freqUP" type="double" value="2.000000GHz"/>
+        <Par name="bandUP" type="double" value="1.000000MHz"/>
+        <Par name="rate" type="double" value="5.000000Mbps"/>
+      </Parameters>
+    </Subnet>
+    <Subnet des="" id="4" mainnetid="4" name="超短波" stacked="0" type="10002">
+      <Modules>
+        <Module name="驱逐舰_5.超短波电台_1"/>
+        <Module name="航空母舰_4.超短波电台_1"/>
+      </Modules>
+      <Parameters>
+        <Par name="power" type="double" value="5.000000W"/>
+        <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+        <Par name="netID" type="int" value="4"/>
+        <Par/>
+        <Par name="mod" type="int" value="1"/>
+        <Par name="freq" type="double" value="50.000000MHz"/>
+        <Par name="freqT" type="int" value="4"/>
+        <Par name="band" type="double" value="25.000000kHz"/>
+        <Par name="rate" type="double" value="64.000000Kbps"/>
+      </Parameters>
+    </Subnet>
+    <Subnet des="" id="5" mainnetid="5" name="宽带" stacked="0" type="10006">
+      <Modules>
+        <Module name="预警机_7.宽带电台_1"/>
+        <Module name="战斗机_6.宽带电台_1"/>
+      </Modules>
+      <Parameters>
+        <Par name="power" type="double" value="50.000000W"/>
+        <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+        <Par name="netID" type="int" value="5"/>
+        <Par/>
+        <Par name="mod" type="int" value="1"/>
+        <Par name="freq" type="double" value="500.000000MHz"/>
+        <Par name="freqT" type="int" value="5"/>
+        <Par name="band" type="double" value="1024.000000kHz"/>
+        <Par name="rate" type="double" value="2048.000000Kbps"/>
+      </Parameters>
+    </Subnet>
+    <Subnet des="" id="6" mainnetid="6" name="微波" stacked="0" type="10005">
+      <Modules>
+        <Module name="微波中继站_12."/>
+        <Module name="微波中继站_13."/>
+      </Modules>
+      <Parameters>
+        <Par name="power" type="double" value="50.000000W"/>
+        <Par name="bercurv" type="string" value="&quot;bpsk&quot;"/>
+        <Par name="netID" type="int" value="6"/>
+        <Par/>
+        <Par name="freq" type="double" value="10.000000GHz"/>
+        <Par name="band" type="double" value="1024.000000kHz"/>
+        <Par name="rate" type="double" value="2048.000000Kbps"/>
+      </Parameters>
+    </Subnet>
+    <Subnet des="" id="7" mainnetid="7" name="Link16" stacked="0" type="16">
+      <Modules>
+        <Module name="预警机_7.Link16电台_1"/>
+        <Module name="战斗机_6.Link16电台_1"/>
+      </Modules>
+      <Parameters>
+        <Par name="power" type="double" value="50.000000W"/>
+        <Par name="bercurv" type="string" value="&quot;qam32&quot;"/>
+        <Par name="netID" type="int" value="7"/>
+        <Par/>
+        <Par name="mod" type="int" value="1"/>
+        <Par name="freq" type="double" value="969.000000MHz"/>
+        <Par name="freqT" type="int" value="0"/>
+        <Par name="band" type="double" value="3000.000000kHz"/>
+        <Par name="rate" type="double" value="107.520000Kbps"/>
+      </Parameters>
+    </Subnet>
+  </Structure>
+</ModuleList>
+

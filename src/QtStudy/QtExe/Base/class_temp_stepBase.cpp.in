@@ -1,0 +1,16 @@
+#include "${Class_File_Name}.h"
+
+namespace xxx
+{
+	${Class_File_Name}::${Class_File_Name}( QWidget* pParnet )
+		: QtUI::CStepBase(pParnet)
+	{
+		//TODO:add the childwidgt use addFunctionalWidget
+		//addFunctionalWidget();
+	}
+
+	${Class_File_Name}::~${Class_File_Name}()
+	{
+
+	}
+}

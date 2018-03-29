@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModouleProjInfo LastModifyTime="2017-06-26 13:51:46.594" CreateUser="qcz" Name="MatlabAdd" CreateTime="2017-06-26 13:51:46.594" Code="MatlabAdd">
+    <Modules>
+        <Module>
+            <Properties>
+                <Property Name="ID" ValueType="string" Value="周一 六月 26 13:52:37 2017"/>
+                <Property Name="ParentModuleName" ValueType="string" Value="B"/>
+                <Property Name="ParentModuleClassName" ValueType="string" Value="VRActors::BaseGameActor"/>
+                <Property Name="ParentProxyClassName" ValueType="string" Value="VRActors::BaseGameActorProxy"/>
+                <Property Name="ParentModuleFileHeaderName" ValueType="string" Value="VRActors/BaseGameActorProxy"/>
+                <Property Name="ModuleName" ValueType="string" Value="MatlabAdd"/>
+                <Property Name="ClassName" ValueType="string" Value="MatlabAdd"/>
+                <Property Name="ClassComment" ValueType="string" Value="使用matlab完成两个数的加法运算(addend+summand=sum)"/>
+                <Property Name="TypeCategory" ValueType="string" Value="Matlab"/>
+                <Property Name="TypeName" ValueType="string" Value="MatlabAdd"/>
+                <Property Name="PluginName" ValueType="string" Value=""/>
+            </Properties>
+            <ModuleStyle>
+                <Property Name="Left" ValueType="int" Value="263"/>
+                <Property Name="Top" ValueType="int" Value="-341"/>
+                <Property Name="Width" ValueType="int" Value="169"/>
+                <Property Name="Height" ValueType="int" Value="102"/>
+                <Property Name="FontName_Class" ValueType="string" Value="微软雅黑"/>
+                <Property Name="FontSize_Class" ValueType="int" Value="12"/>
+                <Property Name="FontBold_Class" ValueType="bool" Value="true"/>
+                <Property Name="FontName_Message" ValueType="string" Value="微软雅黑"/>
+                <Property Name="FontSize_Message" ValueType="int" Value="12"/>
+                <Property Name="FontBold_Message" ValueType="bool" Value="false"/>
+                <Property Name="FontName_Method" ValueType="string" Value="微软雅黑"/>
+                <Property Name="FontSize_Method" ValueType="int" Value="12"/>
+                <Property Name="FontBold_Method" ValueType="bool" Value="false"/>
+                <Property Name="FontName_Attribute" ValueType="string" Value="微软雅黑"/>
+                <Property Name="FontSize_Attribute" ValueType="int" Value="12"/>
+                <Property Name="FontBold_Attribute" ValueType="bool" Value="false"/>
+                <Property Name="Color_Class" ValueType="string" Value="28,29,31,255"/>
+                <Property Name="Color_Message" ValueType="string" Value="28,29,31,255"/>
+                <Property Name="Color_Method" ValueType="string" Value="28,29,31,255"/>
+                <Property Name="Color_Attribute" ValueType="string" Value="28,29,31,255"/>
+                <Property Name="Color_Frame" ValueType="string" Value="0,0,0,255"/>
+                <Property Name="Width_Frame" ValueType="string" Value="1"/>
+                <Property Name="PenStyleFrame" ValueType="int" Value="1"/>
+                <Property Name="BrushStyleBackgroud" ValueType="int" Value="1"/>
+                <Property Name="Color_Background" ValueType="string" Value="255,255,255,255"/>
+                <Property Name="VisibleClassName" ValueType="bool" Value="true"/>
+                <Property Name="VisibleMessage" ValueType="bool" Value="true"/>
+                <Property Name="VisibleMethod" ValueType="bool" Value="true"/>
+                <Property Name="VisibleAttribute" ValueType="bool" Value="true"/>
+            </ModuleStyle>
+            <MemberMethods/>
+            <MemberVariables>
+                <MemberVariable>
+                    <Property Name="ID" ValueType="string" Value="13:53:39:181"/>
+                    <Property Name="LableName" ValueType="string" Value="addend"/>
+                    <Property Name="Type" ValueType="string" Value="double"/>
+                    <Property Name="Code" ValueType="string" Value="addend"/>
+                    <Property Name="Comment" ValueType="string" Value=""/>
+                    <Property Name="Visibility" ValueType="string" Value="protected"/>
+                    <Property Name="ParamOutOrIn" ValueType="string" Value="InParameter"/>
+                </MemberVariable>
+                <MemberVariable>
+                    <Property Name="ID" ValueType="string" Value="13:53:39:325"/>
+                    <Property Name="LableName" ValueType="string" Value="summand"/>
+                    <Property Name="Type" ValueType="string" Value="double"/>
+                    <Property Name="Code" ValueType="string" Value="summand"/>
+                    <Property Name="Comment" ValueType="string" Value=""/>
+                    <Property Name="Visibility" ValueType="string" Value="protected"/>
+                    <Property Name="ParamOutOrIn" ValueType="string" Value="InParameter"/>
+                </MemberVariable>
+                <MemberVariable>
+                    <Property Name="ID" ValueType="string" Value="13:53:40:740"/>
+                    <Property Name="LableName" ValueType="string" Value="sum"/>
+                    <Property Name="Type" ValueType="string" Value="double"/>
+                    <Property Name="Code" ValueType="string" Value="sum"/>
+                    <Property Name="Comment" ValueType="string" Value=""/>
+                    <Property Name="Visibility" ValueType="string" Value="protected"/>
+                    <Property Name="ParamOutOrIn" ValueType="string" Value="OutParameter"/>
+                </MemberVariable>
+            </MemberVariables>
+            <Messages/>
+        </Module>
+    </Modules>
+</ModouleProjInfo>

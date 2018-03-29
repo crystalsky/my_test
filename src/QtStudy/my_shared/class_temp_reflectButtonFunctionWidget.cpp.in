@@ -1,0 +1,27 @@
+#include "${Class_File_Name}.h"
+
+namespace xxx
+{
+	${Class_File_Name}::${Class_File_Name}( QWidget* pParent /*= NULL*/ )
+	 : ReflectButtonFunctionWidget(pParent)
+	{
+		//TODO: add the reflection class name
+		QStringList listFunc = QStringList() 
+			<< "1";
+
+		addFunctionButtons(listFunc);
+	}
+
+	bool ${Class_File_Name}::onButtonClicked( const QString& strFunctionButtonName )
+	{
+		if (ReflectButtonFunctionWidget::onButtonClicked(strFunctionButtonName))
+		{
+			return true;
+		}
+
+		//TODO:
+
+
+		return false;
+	}
+}

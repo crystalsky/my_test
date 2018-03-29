@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<CommunicationCfg>
+	<PlaneStateCfg>
+		<CommuItem>
+			<Name>飞机运动态势</Name>
+			<LocalPort>2401</LocalPort>
+			<RomoteIP>127.0.0.1</RomoteIP>
+			<RomotePort>2400</RomotePort>
+		</CommuItem>
+	</PlaneStateCfg>
+	<FacilitiesCfg>
+		<CommuItem>
+			<Name>通信手段1</Name>
+			<LocalPort>2501</LocalPort>1
+			<RomoteIP>127.0.0.1</RomoteIP>
+			<RomotePort>2500</RomotePort>
+		</CommuItem>
+		<CommuItem>
+			<Name>通信手段2</Name>
+			<LocalPort>2511</LocalPort>
+			<RomoteIP>127.0.0.1</RomoteIP>
+			<RomotePort>2510</RomotePort>
+		</CommuItem>
+		<CommuItem>
+			<Name>通信手段3</Name>
+			<LocalPort>2521</LocalPort>
+			<RomoteIP>127.0.0.1</RomoteIP>
+			<RomotePort>2520</RomotePort>
+		</CommuItem>
+		<CommuItem>
+			<Name>通信手段4</Name>
+			<LocalPort>2531</LocalPort>
+			<RomoteIP>127.0.0.1</RomoteIP>
+			<RomotePort>2530</RomotePort>
+		</CommuItem>
+	</FacilitiesCfg>
+</CommunicationCfg>

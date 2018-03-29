@@ -1,0 +1,90 @@
+SET(_my_target_name ice_loginandtransdata)
+IF(BUILDICE_TYPE_SERVER)#Server
+    SET(TARGET_NAME ${_my_target_name}_Server)
+    VIRE_MAKE_CLASS(${TARGET_NAME}
+		#FileTransferTask
+	)
+    SEARCH_FILE_TO_VAL(LIB_SOURCES 
+		Server
+		
+		#DSSDataService 
+		#DSSDataServiceI 
+		#ClientsManager 
+		#TaskManager 
+		#UserTaskMapper
+		#UserTask 
+		#CRCUtil
+	)
+
+	SEARCH_DIR_FILE_TO_VAL(LIB_SOURCES 
+		${CMAKE_CURRENT_LIST_DIR}/../DSS_ICEService
+		DSSDataService 
+		#DSSDataServiceI 
+		#ClientsManager 
+		#TaskManager 
+		#UserTaskMapper
+		#UserTask 
+		CRCUtil
+	)
+ELSE()#Client
+    SET(TARGET_NAME ${_my_target_name}_Client)
+
+	VIRE_MAKE_CLASS(${TARGET_NAME}
+	)
+	
+	SEARCH_FILE_TO_VAL(LIB_SOURCES 
+		Client 
+	)
+
+    SEARCH_DIR_FILE_TO_VAL(LIB_SOURCES 
+		${CMAKE_CURRENT_LIST_DIR}/../DSS_ICEService
+		DSSDataService 
+	)
+ENDIF()
+
+ADD_EXECUTABLE(${TARGET_NAME}  
+   ${LIB_SOURCES}
+)
+
+include_directories(
+	${Boost_INCLUDE_DIR}
+	${PROJECT_INCLUDE_DIR}
+	${CMAKE_CURRENT_LIST_DIR}
+	${CMAKE_CURRENT_LIST_DIR}/../DSS_ICEService
+)
+
+ADD_3RD_DEPENDENCIES(${TARGET_NAME} 
+	UTILITYKIT_LIBRARY
+	JSONCPP_LIBRARY
+	GLOG_LIBRARY
+)
+
+target_link_libraries(${TARGET_NAME}
+	DSS_ICEService
+)
+
+LINK_WITH_VARIABLES(${TARGET_NAME} 
+	Boost_PROGRAM_OPTIONS_LIBRARY
+)
+
+SET_TARGET_PROPERTIES(${TARGET_NAME} 
+	PROPERTIES 
+	FOLDER "ice") 
+SET_TARGET_PROPERTIES(${TARGET_NAME} 
+	PROPERTIES 
+	DEBUG_OUTPUT_NAME "${TARGET_NAME}${CMAKE_DEBUG_POSTFIX}")
+SET_TARGET_PROPERTIES(${TARGET_NAME} 
+	PROPERTIES 
+	RELEASE_OUTPUT_NAME "${TARGET_NAME}${CMAKE_RELEASE_POSTFIX}")
+
+SET(DEST_FILE_DIR ${PROJECT_SOURCE_DIR}/bin/)
+MESSAGE(STATUS "....${DEST_FILE_DIR}/${TARGET_OUTPUT_NAME}${CMAKE_DEBUG_POSTFIX}")
+
+add_custom_command(TARGET  ${TARGET_NAME} PRE_BUILD
+	  COMMAND echo "delete  ${TARGET_NAME}.exe..."
+	  COMMAND ${CMAKE_COMMAND} -E remove 
+	  	${DEST_FILE_DIR}/debug/${TARGET_OUTPUT_NAME}${CMAKE_DEBUG_POSTFIX}.exe
+	  COMMAND ${CMAKE_COMMAND} -E remove 
+	  	${DEST_FILE_DIR}/release/${TARGET_OUTPUT_NAME}${CMAKE_RELEASE_POSTFIX}.exe
+)
+

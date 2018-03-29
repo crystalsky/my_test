@@ -1,0 +1,72 @@
+SET(_my_target_name ice_login_call_back)
+IF(BUILDICE_TYPE_SERVER)#Server
+    SET(TARGET_NAME ${_my_target_name}_Server)
+    VIRE_MAKE_CLASS(${TARGET_NAME}
+		FileTransferTask
+	)
+    SEARCH_FILE_TO_VAL(LIB_SOURCES Login 
+		LoginI TaskDataQueue Server DataTransmitter DataTransmitterI 
+		ClientsManager TaskManager UserTaskMapper
+		DataProcBase UserTask FileTransferTask
+		CRCUtil
+	)
+ELSE()#Client
+    SET(TARGET_NAME ${_my_target_name}_Client)
+
+	VIRE_MAKE_CLASS(${TARGET_NAME}
+		CRCUtil
+	)
+    SEARCH_FILE_TO_VAL(LIB_SOURCES 
+		Login Client LoginCallBackI DataTransmitter
+		SendDataThread
+		SendFileThread
+		CRCUtil
+	)
+ENDIF()
+
+ADD_EXECUTABLE(${TARGET_NAME}  
+   ${LIB_SOURCES}
+)
+
+include_directories(
+	${Boost_INCLUDE_DIR}
+	${PROJECT_INCLUDE_DIR}
+	${CMAKE_CURRENT_LIST_DIR}
+)
+
+ADD_3RD_DEPENDENCIES(${TARGET_NAME} 
+	UTILITYKIT_LIBRARY
+	JSONCPP_LIBRARY
+	GLOG_LIBRARY
+)
+
+target_link_libraries(${TARGET_NAME}
+	ICE::ICE
+	ICE::ICEUTIL
+)
+
+LINK_WITH_VARIABLES(${TARGET_NAME} 
+	Boost_PROGRAM_OPTIONS_LIBRARY
+)
+
+SET_TARGET_PROPERTIES(${TARGET_NAME} 
+	PROPERTIES 
+	FOLDER "ice") 
+SET_TARGET_PROPERTIES(${TARGET_NAME} 
+	PROPERTIES 
+	DEBUG_OUTPUT_NAME "${TARGET_NAME}${CMAKE_DEBUG_POSTFIX}")
+SET_TARGET_PROPERTIES(${TARGET_NAME} 
+	PROPERTIES 
+	RELEASE_OUTPUT_NAME "${TARGET_NAME}${CMAKE_RELEASE_POSTFIX}")
+
+SET(DEST_FILE_DIR ${PROJECT_SOURCE_DIR}/bin/)
+MESSAGE(STATUS "....${DEST_FILE_DIR}/${TARGET_OUTPUT_NAME}${CMAKE_DEBUG_POSTFIX}")
+
+add_custom_command(TARGET  ${TARGET_NAME} PRE_BUILD
+	  COMMAND echo "delete  ${TARGET_NAME}.exe..."
+	  COMMAND ${CMAKE_COMMAND} -E remove 
+	  	${DEST_FILE_DIR}/debug/${TARGET_OUTPUT_NAME}${CMAKE_DEBUG_POSTFIX}.exe
+	  COMMAND ${CMAKE_COMMAND} -E remove 
+	  	${DEST_FILE_DIR}/release/${TARGET_OUTPUT_NAME}${CMAKE_RELEASE_POSTFIX}.exe
+)
+

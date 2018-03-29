@@ -1,0 +1,26 @@
+#ifndef ${Class_File_Name}_h__
+#define ${Class_File_Name}_h__
+
+#include <string>
+#include <vector>
+#include <map>
+#include <list>
+#include "OSGBaseDef.h"
+
+class ${Class_File_Name} : public ReflectedOSGFuncBase
+{
+    DECLARE_REFLECTED_CLASS(${Class_File_Name})
+public:
+    ${Class_File_Name}();
+    ~${Class_File_Name}();
+
+    virtual void init();
+public:
+    virtual osg::Node* getNode();
+protected:
+    void _doInit();
+private:
+
+};
+
+#endif // ${Class_File_Name}_h__

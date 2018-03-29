@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommunicationCfg 属性1="属性值[周四 九月 25 01:13:48 2014]" 属性2="16899" 属性3="422.34">
+    <PlaneStateCfg 属性1="Attribute值[周四 九月 25 01:13:48 2014]" 属性2="15746" 属性3="644">
+        <CommuItem>
+            <Name>Element值[周四 九月 25 01:13:48 2014]</Name>
+            <LocalPort>13223</LocalPort>
+            <RomoteIP>171.20.125.22</RomoteIP>
+            <RomotePort>17108</RomotePort>
+        </CommuItem>
+    </PlaneStateCfg>
+</CommunicationCfg>

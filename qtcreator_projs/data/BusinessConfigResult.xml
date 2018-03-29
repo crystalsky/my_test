@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessNetInfoConfig>
+    <NetPlat businessType="FTP" description="新建网络0的描述" ID="20160415125111973" name="FTP1">
+        <Plat description="" name="驱逐舰_0" ID="14153bea-84d8-4e37-93b8-6afd7213b2a7">
+            <Device upperName="" upperID="" ID="f7fdfae9-1bf0-406a-8d5c-b51e5cc0c7af" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+        <Plat description="" name="驱逐舰_9" ID="42b6dc65-a441-49b4-8106-ae87992bb519">
+            <Device upperName="" upperID="" ID="d71f7f3a-07d2-4ba5-9051-835153f2c044" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+    </NetPlat>
+    <NetPlat businessType="FTP" description="新建网络1的描述" ID="20160415125127902" name="FTP2">
+        <Plat description="" name="驱逐舰_9" ID="42b6dc65-a441-49b4-8106-ae87992bb519">
+            <Device upperName="" upperID="" ID="d71f7f3a-07d2-4ba5-9051-835153f2c044" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+        <Plat description="" name="驱逐舰_0" ID="14153bea-84d8-4e37-93b8-6afd7213b2a7">
+            <Device upperName="" upperID="" ID="f7fdfae9-1bf0-406a-8d5c-b51e5cc0c7af" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+        <Plat description="" name="轰炸机_2" ID="8c03e515-b0cf-48f7-b108-a44bf3f63478">
+            <Device upperName="" upperID="" ID="04fe2b20-9a6e-46eb-8bf5-c8385e6c8c45" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+    </NetPlat>
+    <NetPlat businessType="HTTP" description="新建网络2的描述" ID="20160415125148229" name="HTTP1">
+        <Plat description="" name="驱逐舰_0" ID="14153bea-84d8-4e37-93b8-6afd7213b2a7">
+            <Device upperName="" upperID="" ID="f7fdfae9-1bf0-406a-8d5c-b51e5cc0c7af" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+        <Plat description="" name="驱逐舰_9" ID="42b6dc65-a441-49b4-8106-ae87992bb519">
+            <Device upperName="" upperID="" ID="d71f7f3a-07d2-4ba5-9051-835153f2c044" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+        <Plat description="" name="轰炸机_2" ID="8c03e515-b0cf-48f7-b108-a44bf3f63478">
+            <Device upperName="" upperID="" ID="04fe2b20-9a6e-46eb-8bf5-c8385e6c8c45" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+    </NetPlat>
+    <NetPlat businessType="EMAIL" description="新建网络3的描述" ID="20160415125210037" name="EMAIL1">
+        <Plat description="" name="轰炸机_2" ID="8c03e515-b0cf-48f7-b108-a44bf3f63478">
+            <Device upperName="" upperID="" ID="04fe2b20-9a6e-46eb-8bf5-c8385e6c8c45" name="业务服务器_1" cmdClass="0"/>
+            <Device upperName="" upperID="" ID="9bbb7892-9db9-456a-a412-455702c15e72" name="计算机终端_1" cmdClass="0"/>
+        </Plat>
+        <Plat description="" name="驱逐舰_1" ID="ce191c0c-792d-46b7-a869-7dcfebf36901">
+            <Device upperName="" upperID="" ID="3d3e79f3-6638-4173-82e7-e4f0aa1067a3" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+        <Plat description="" name="坦克_3" ID="e5574c24-7cd2-49b8-8625-feea2c351f0a">
+            <Device upperName="" upperID="" ID="49d0ae74-6a3e-41d4-9fdc-ede96ef80767" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+        <Plat description="" name="驱逐舰_9" ID="42b6dc65-a441-49b4-8106-ae87992bb519">
+            <Device upperName="" upperID="" ID="d71f7f3a-07d2-4ba5-9051-835153f2c044" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+        <Plat description="" name="驱逐舰_0" ID="14153bea-84d8-4e37-93b8-6afd7213b2a7">
+            <Device upperName="" upperID="" ID="f7fdfae9-1bf0-406a-8d5c-b51e5cc0c7af" name="业务服务器_1" cmdClass="0"/>
+        </Plat>
+    </NetPlat>
+</BusinessNetInfoConfig>

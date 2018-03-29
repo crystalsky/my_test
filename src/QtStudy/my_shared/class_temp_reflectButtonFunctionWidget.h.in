@@ -1,0 +1,23 @@
+#ifndef ${Class_File_Name}_h__
+#define ${Class_File_Name}_h__
+
+#include "ReflectButtonFunctionWidget.h"
+
+namespace xxx
+{
+	class ${Class_File_Name} : public ReflectButtonFunctionWidget
+	{
+		Q_OBJECT
+	public:
+		${Class_File_Name}(QWidget* pParent = NULL);
+		~${Class_File_Name}(){}
+
+	public:
+		void init();
+	private:
+		virtual bool onButtonClicked(const QString& strFunctionButtonName);
+	};
+}
+
+
+#endif // _test_widget_template_h__

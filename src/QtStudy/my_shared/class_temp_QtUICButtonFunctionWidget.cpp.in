@@ -1,0 +1,30 @@
+#include "${Class_File_Name}.h"
+#include "glog.h"
+
+namespace XXX
+{
+	${Class_File_Name}::${Class_File_Name}( QWidget* pParent /*= NULL*/ )
+		: QtUI::CButtonFunctionWidget(4, pParent)
+	{
+		init();
+	}
+
+	void ${Class_File_Name}::init()
+	{
+		QStringList listFunc = QStringList() <<
+			"xxx";
+
+
+		addFunctionButtons(listFunc);
+	}
+
+	bool ${Class_File_Name}::onButtonClicked( const QString& strFunctionButtonName )
+	{
+		if (strFunctionButtonName == "xxx")
+		{
+			
+		}
+
+		return true;
+	}
+}

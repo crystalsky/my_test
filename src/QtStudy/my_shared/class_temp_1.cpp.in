@@ -1,0 +1,17 @@
+#include "${Class_File_Name}.h"
+
+IMPLEMENT_REFLECTED_CLASS(${Class_File_Name})
+${Class_File_Name}::${Class_File_Name}()
+{
+	
+}
+
+${Class_File_Name}::~${Class_File_Name}()
+{
+	
+}
+
+void ${Class_File_Name}::run()
+{
+
+}

@@ -1,0 +1,180 @@
+SET(APPLICATION_NAME QtExe_CPP_STL)
+
+#===================================================
+
+BEGIN_TARGET(${APPLICATION_NAME})
+
+#===================================================
+# ¶¨ÒåÏîÄ¿°æ±¾
+VIRE_VERSIONED_TARGET(${APPLICATION_NAME} 1 0 0 102)
+
+# Note the version no is Mmmpp for Major/minor/patch, 0-padded, thus '10100' for 1.1.0
+
+SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /NODEFAULTLIB:LIBCMTD")
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON) 
+
+ADD_DEFINITIONS(-DCONSOLE)
+
+SET(_SHARED_FOLDER ${CMAKE_CURRENT_LIST_DIR}/../my_shared)
+
+#===================================================
+INCLUDE_DIRECTORIES(${RIBBON_INCLUDE_DIR}
+	${TINYXML_INCLUDE_DIR}
+	${DEFAULT_INCLUDE_SUBDIR}
+	${Boost_INCLUDE_DIR}
+	${_SHARED_FOLDER}
+)
+
+include(${_SHARED_FOLDER}/make_class_temp_files.cmake)
+#===================================================
+MAKE_CLASS_TEMP_CLASS_TEST_WIDGET(${APPLICATION_NAME}
+	SUB_DIR_NAME STLStudy
+	_STLTestWidget)
+
+MAKE_REFLECT_CLASS_FILE(${APPLICATION_NAME}
+	SUB_DIR_NAME STLStudy
+	std_unary_function
+	std_for_each
+	std_with_lambda
+	)
+
+#===================================================
+MAKE_STEPBASE_SUB_CLASS_FILE(${APPLICATION_NAME}
+	SUB_DIR_NAME CPPStudy
+	widget_cppstudy_root
+)
+
+MAKE_REFLECT_BUTTONFUNCTIONWIDGET_SUB_CLASS_FILE(${APPLICATION_NAME}
+	SUB_DIR_NAME CPPStudy
+	cppstudy_widget_1
+)
+
+MAKE_REFLECT_CLASS_FILE(${APPLICATION_NAME}
+	SUB_DIR_NAME CPPStudy
+	classoverride
+	Non_Virtual_Interface
+	Strategy_By_FunctionPointer
+	Strategy_By_TR1_Function
+)
+#===================================================
+
+#ÉèÖÃUI×ÊÔ´
+FILE(GLOB_RECURSE ${APPLICATION_NAME}_QT_UIS "*.ui")
+
+# ÉèÖÃÍ¼Æ¬×ÊÔ´
+FILE(GLOB_RECURSE ${APPLICATION_NAME}_QT_RCS "*.qrc")
+
+# ÉèÖÃh´úÂë
+FILE(GLOB_RECURSE ${APPLICATION_NAME}_HEADERS "*.h")
+
+FILE(GLOB_RECURSE ${APPLICATION_NAME}_HEADERS "*.h")
+FILE(GLOB SHARED_SRC "${_SHARED_FOLDER}/*.h" "${_SHARED_FOLDER}/*.cpp")
+
+
+# ÉèÖÃcpp´úÂë
+FILE(GLOB_RECURSE ${APPLICATION_NAME}_SRCS "*.cpp")
+
+
+#===================================================
+#Qt´¦ÀíUIºÍQRCÎÄ¼þ
+VIRE_TARGET_PROCESS_QT_RESOURCES_UIS_AUTO_GEN(${APPLICATION_NAME})
+
+#===================================================
+SET(_${APPLICATION_NAME}_HEADER
+	${${APPLICATION_NAME}_UI_HDRS}
+	${${APPLICATION_NAME}_QT_UIS}
+	${${APPLICATION_NAME}_HEADERS}
+)
+
+SET(_${APPLICATION_NAME}_CPP 		
+	${VERSIONED_LIB_RC} 
+	${${APPLICATION_NAME}_SRCS}
+	${${APPLICATION_NAME}_RC_SRCS}
+	${${APPLICATION_NAME}_QT_RCS}
+	${${APPLICATION_NAME}_MOC_SRCS}
+	${SHARED_SRC}
+)
+
+#´ò°üÏà¹ØÎÄ¼þ³É¿ÉÖ´ÐÐÎÄ¼þ
+ADD_EXECUTABLE(${APPLICATION_NAME} 
+	${_${APPLICATION_NAME}_HEADER}
+	${_${APPLICATION_NAME}_CPP}
+)
+
+#===================================================
+target_link_libraries(${APPLICATION_NAME} 
+	QTUTILITY::QTUTILITY
+	GLOG::GLOG
+	TINYXML::TINYXML
+	QTUI::QTUI
+	UTILITYKIT::UTILITYKIT
+	QTXMLSERIALIZE::QTXMLSERIALIZE
+)
+
+IF ( Qt5Widgets_FOUND )
+    qt5_use_modules( ${APPLICATION_NAME} Gui Widgets OpenGL Xml Test Quick Concurrent Multimedia MultimediaWidgets)
+ELSE()   
+TARGET_LINK_LIBRARIES(${APPLICATION_NAME}
+${QT_LIBRARIES} 
+	${QT_QTOPENGL_LIBRARY} 
+	${QT_QTCORE_LIBRARY} 
+	${QT_QTGUI_LIBRARY} 
+	${QT_QTSVG_LIBRARY}
+	${QT_QTTEST_LIBRARY}
+	${QT_QTXML_LIBRARY}
+)
+ENDIF( Qt5Widgets_FOUND )
+#===================================================
+#configure_file(app.config ${PROJECT_SOURCE_DIR}/bin/Debug @ONLY) 
+#configure_file(app.config ${PROJECT_SOURCE_DIR}/bin/Release @ONLY) 
+
+# ÉèÖÃ¹¤³ÌµÄÊôÐÔ
+SET (TARGET_OUTPUT_NAME ${APPLICATION_NAME} )
+SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES OUTPUT_NAME ${TARGET_OUTPUT_NAME} )
+SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES DEBUG_OUTPUT_NAME "${TARGET_OUTPUT_NAME}${CMAKE_DEBUG_POSTFIX}")
+SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES RELEASE_OUTPUT_NAME "${TARGET_OUTPUT_NAME}${CMAKE_RELEASE_POSTFIX}")
+
+# ÉèÖÃÓëQT designer ¼¯³É
+SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES VS_KEYWORD "Qt4VSv1.0")
+
+# ÉèÖÃÏîÄ¿±êÇ©.
+SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES PROJECT_LABEL "App ${APPLICATION_NAME}")
+SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES FOLDER "App") 
+ 
+#===================================================
+#test source_group_by_dir_ex
+set(all_files 
+	${${APPLICATION_NAME}_HEADERS} 
+	${${APPLICATION_NAME}_SRCS})
+
+MESSAGE("${all_files}")
+common_source_group_by_subdir(${all_files} DEBUG_MSG)
+
+
+#SOURCE_GROUP(FormFiles REGULAR_EXPRESSION "\\w+\\.ui")
+SOURCE_GROUP(ResourceFiles FILES 
+	${${APPLICATION_NAME}_QT_UIS}
+	${${APPLICATION_NAME}_QT_QRC}
+)
+
+#===================================================
+#VIRE_TARGET_SOURCE_GROUP(${APPLICATION_NAME})
+#===================================================
+
+#Êä³öµ½ÉÏ¼¶Ä¿Â¼£¬È¡Ïûdebug, release Ä¿Â¼
+IF (MSVC_IDE) 
+	SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY  ${PROJECT_SOURCE_DIR}/bin )
+	SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin/Debug )
+	SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY_RELEASE ${PROJECT_SOURCE_DIR}/bin/Release)
+ENDIF() 
+ 
+END_TARGET(${APPLICATION_NAME})
+
+	
+
+
+
+
+

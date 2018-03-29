@@ -1,0 +1,8 @@
+IF(BUILD_QtExe)
+	ADD_SUBDIRECTORY(color_picker)
+ENDIF()
+
+IF(BUILD_OPENGL AND Build_OpenGL_SupperBible)
+	ADD_SUBDIRECTORY(GLTools)
+ENDIF()
+

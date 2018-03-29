@@ -1,0 +1,175 @@
+SET(APPLICATION_NAME QtExe2)
+
+#===================================================
+
+BEGIN_TARGET(${APPLICATION_NAME})
+
+#===================================================
+# ¶¨ÒåÏîÄ¿°æ±¾
+VIRE_VERSIONED_TARGET(${APPLICATION_NAME} 1 0 0 102)
+
+# Note the version no is Mmmpp for Major/minor/patch, 0-padded, thus '10100' for 1.1.0
+
+SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /NODEFAULTLIB:LIBCMTD")
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON) 
+
+#ADD_DEFINITIONS(-DCONSOLE)
+#===================================================
+INCLUDE_DIRECTORIES(${RIBBON_INCLUDE_DIR}
+	${TINYXML_INCLUDE_DIR}
+	${DEFAULT_INCLUDE_SUBDIR}
+)
+
+#===================================================
+MAKE_CLASS_WIDGET(${APPLICATION_NAME} 
+	LoginWidgets
+	MainWindow)
+#===================================================
+
+#ÉèÖÃUI×ÊÔ´
+FILE(GLOB_RECURSE ${APPLICATION_NAME}_QT_UIS "*.ui")
+
+# ÉèÖÃÍ¼Æ¬×ÊÔ´
+FILE(GLOB_RECURSE ${APPLICATION_NAME}_QT_RCS "*.qrc")
+
+# ÉèÖÃh´úÂë
+FILE(GLOB_RECURSE ${APPLICATION_NAME}_HEADERS "*.h")
+
+# ÉèÖÃcpp´úÂë
+FILE(GLOB_RECURSE ${APPLICATION_NAME}_SRCS "*.cpp")
+
+
+#===================================================
+#Qt´¦ÀíUIºÍQRCÎÄ¼þ
+VIRE_TARGET_PROCESS_QT_RESOURCES_UIS(${APPLICATION_NAME})
+
+file(TIMESTAMP ./main.cpp TT)
+MESSAGE("File TIMESTAMP: ${TT}")
+STRING(TIMESTAMP "%Y-%m-%dT%H:%M:%S" FS)
+MESSAGE("File TIMESTAMP: ${FS}")
+#===================================================
+SET(_${APPLICATION_NAME}_HEADER
+	${${APPLICATION_NAME}_UI_HDRS}
+	${${APPLICATION_NAME}_QT_UIS}
+	${${APPLICATION_NAME}_HEADERS}
+)
+
+SET(_${APPLICATION_NAME}_CPP 		
+	${VERSIONED_LIB_RC} 
+	${${APPLICATION_NAME}_SRCS}
+	${${APPLICATION_NAME}_RC_SRCS}
+	${${APPLICATION_NAME}_QT_RCS}
+	${${APPLICATION_NAME}_MOC_SRCS}
+)
+
+#´ò°üÏà¹ØÎÄ¼þ³É¿ÉÖ´ÐÐÎÄ¼þ
+ADD_EXECUTABLE(${APPLICATION_NAME} 
+	${_${APPLICATION_NAME}_HEADER}
+	${_${APPLICATION_NAME}_CPP}
+)
+
+#===================================================
+#ÉèÖÃLinkÒÀÀµ°ü
+TARGET_LINK_LIBRARIES(${APPLICATION_NAME}
+	
+)
+
+ADD_3RD_DEPENDENCIES(${APPLICATION_NAME} 
+
+)
+
+IF ( Qt5Widgets_FOUND )
+    qt5_use_modules( ${APPLICATION_NAME} Gui Widgets OpenGL Xml Test Quick Concurrent Multimedia MultimediaWidgets)
+ELSE()   
+TARGET_LINK_LIBRARIES(${APPLICATION_NAME}
+${QT_LIBRARIES} 
+	${QT_QTOPENGL_LIBRARY} 
+	${QT_QTCORE_LIBRARY} 
+	${QT_QTGUI_LIBRARY} 
+	${QT_QTSVG_LIBRARY}
+	${QT_QTTEST_LIBRARY}
+	${QT_QTXML_LIBRARY}
+)
+ENDIF( Qt5Widgets_FOUND )
+#===================================================
+#configure_file(app.config ${PROJECT_SOURCE_DIR}/bin/Debug @ONLY) 
+#configure_file(app.config ${PROJECT_SOURCE_DIR}/bin/Release @ONLY) 
+
+# ÉèÖÃ¹¤³ÌµÄÊôÐÔ
+SET (TARGET_OUTPUT_NAME ${APPLICATION_NAME} )
+SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES OUTPUT_NAME ${TARGET_OUTPUT_NAME} )
+SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES DEBUG_OUTPUT_NAME "${TARGET_OUTPUT_NAME}${CMAKE_DEBUG_POSTFIX}")
+SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES RELEASE_OUTPUT_NAME "${TARGET_OUTPUT_NAME}${CMAKE_RELEASE_POSTFIX}")
+
+# ÉèÖÃÓëQT designer ¼¯³É
+SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES VS_KEYWORD "Qt4VSv1.0")
+
+# ÉèÖÃÏîÄ¿±êÇ©.
+SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES PROJECT_LABEL "App ${APPLICATION_NAME}")
+SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES FOLDER "App") 
+ 
+
+ 
+SET(DEST_FILE_DIR ${PROJECT_SOURCE_DIR}/bin/)
+MESSAGE(STATUS "....${DEST_FILE_DIR}/${TARGET_OUTPUT_NAME}${CMAKE_DEBUG_POSTFIX}")
+
+add_custom_command(TARGET  ${APPLICATION_NAME} PRE_BUILD
+	  COMMAND echo "delete  ${APPLICATION_NAME}.exe..."
+	  COMMAND ${CMAKE_COMMAND} -E remove 
+	  	${DEST_FILE_DIR}/debug/${TARGET_OUTPUT_NAME}${CMAKE_DEBUG_POSTFIX}.exe
+	  COMMAND ${CMAKE_COMMAND} -E remove 
+	  	${DEST_FILE_DIR}/release/${TARGET_OUTPUT_NAME}${CMAKE_RELEASE_POSTFIX}.exe
+)
+
+#===================================================
+#test source_group_by_dir_ex
+set(all_files 
+	${${APPLICATION_NAME}_HEADERS} 
+	${${APPLICATION_NAME}_SRCS} 
+	${${APPLICATION_NAME}_QT_UIS} 
+	${${APPLICATION_NAME}_QT_RCS})
+
+MESSAGE("${all_files}")
+source_group_by_dir_ex(all_files)
+
+
+#SOURCE_GROUP(FormFiles REGULAR_EXPRESSION "\\w+\\.ui")
+SOURCE_GROUP(ResourceFiles FILES 
+	${${APPLICATION_NAME}_QT_UIS}
+	${${APPLICATION_NAME}_QT_QRC}
+)
+
+#===================================================
+#VIRE_TARGET_SOURCE_GROUP(${APPLICATION_NAME})
+#===================================================
+
+#Êä³öµ½ÉÏ¼¶Ä¿Â¼£¬È¡Ïûdebug, release Ä¿Â¼
+IF (MSVC_IDE) 
+	SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY  ${PROJECT_SOURCE_DIR}/bin )
+	SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin/Debug )
+	SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY_RELEASE ${PROJECT_SOURCE_DIR}/bin/Release)
+ENDIF() 
+ 
+END_TARGET(${APPLICATION_NAME})
+  
+  
+# debug °²×°
+INSTALL(
+TARGETS ${APPLICATION_NAME}
+RUNTIME DESTINATION bin/Debug
+)
+	
+
+# release °²×°
+INSTALL(
+TARGETS ${APPLICATION_NAME}
+RUNTIME DESTINATION bin/release
+)
+	
+INSTALL(CODE "MESSAGE(\"Installing App:${APPLICATION_NAME}..\")")
+
+
+
+
+

@@ -1,0 +1,3 @@
+SET(SUB_FOLDER_NAME OSGExmaples)
+ADD_SUBDIRECTORY(osggeometry)
+ADD_SUBDIRECTORY(osgviewerQt)
