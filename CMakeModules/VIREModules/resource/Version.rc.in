@@ -1,0 +1,32 @@
+1 VERSIONINFO
+ FILEVERSION ${${_Lib_Name}_MajorVersion}, ${${_Lib_Name}_MinorVersion}, ${${_Lib_Name}_PatchVersion}, ${${_Lib_Name}_SOVersion}
+ PRODUCTVERSION ${${_Lib_Name}_MajorVersion}, ${${_Lib_Name}_MinorVersion}, ${${_Lib_Name}_PatchVersion}, ${${_Lib_Name}_SOVersion}
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x0L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+			VALUE "CompanyName", "Vire Technology"
+            VALUE "FileDescription", "${_Lib_Name} Binary"
+            VALUE "FileVersion", "${${_Lib_Name}_MajorVersion}, ${${_Lib_Name}_MinorVersion}, ${${_Lib_Name}_PatchVersion}, ${${_Lib_Name}_SOVersion}"
+            VALUE "InternalName", "${_Lib_Name}"
+            VALUE "LegalCopyright", "Copyright Vire Technology"
+            VALUE "OriginalFilename", "${_Lib_Name} Library"
+            VALUE "ProductName", "${_Lib_Name}"
+            VALUE "ProductVersion", "${${_Lib_Name}_MajorVersion}, ${${_Lib_Name}_MinorVersion}, ${${_Lib_Name}_PatchVersion}, ${${_Lib_Name}_SOVersion}"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

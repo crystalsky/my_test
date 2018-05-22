@@ -1,0 +1,5 @@
+include(vire.macro_vire_make_class_file)
+include(vire.macro_vire_target_search_files)
+include(vire.macro_vire_versioned_target)
+include(vire.macro_vire_target_process_qt_resources_uis)
+include(vire.macro_vire_set_target)

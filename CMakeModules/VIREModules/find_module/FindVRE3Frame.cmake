@@ -1,0 +1,59 @@
+FIND_PATH(VRE3FRAME_INCLUDE_DIR VRMainFrame/MainWindow.h
+    ${VRE3FRAME_DIR}/include
+    $ENV{VRE3FRAME_DIR}/include
+    ~/Library/Frameworks
+    /Library/Frameworks
+    /usr/local/include
+    /usr/include
+    /usr/include/cal3d
+    /sw/include # Fink
+    /opt/local/include # DarwinPorts
+    /opt/csw/include # Blastwave
+    /opt/include
+    [HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session\ Manager\\Environment;OSG_ROOT]/include
+    /usr/freeware/include
+)
+
+
+MACRO(FIND_VRE3FRAME_LIBRARY MYLIBRARY MYLIBRARYNAME)
+
+FIND_LIBRARY(${MYLIBRARY}
+    NAMES ${MYLIBRARYNAME}
+    PATHS
+    ${VRE3FRAME_DIR}/lib
+    $ENV{VRE3FRAME_DIR}/lib
+    ~/Library/Frameworks
+    /Library/Frameworks
+    /usr/local/lib
+    /usr/lib
+    /sw/lib
+    /opt/local/lib
+    /opt/csw/lib
+    /opt/lib
+    [HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session\ Manager\\Environment;OSG_ROOT]/lib
+    /usr/freeware/lib64
+)
+ENDMACRO(FIND_VRE3FRAME_LIBRARY MYLIBRARY MYLIBRARYNAME)
+
+
+FIND_VRE3FRAME_LIBRARY(VRE3FRAME_VRMAINFRAME_LIBRARY VRMainFrame)
+FIND_VRE3FRAME_LIBRARY(VRE3FRAME_VRMAINFRAME_LIBRARY_DEBUG VRMainFramed)
+
+FIND_VRE3FRAME_LIBRARY(VRE3FRAME_VRUTIL_LIBRARY VRUtil)
+FIND_VRE3FRAME_LIBRARY(VRE3FRAME_VRUTIL_LIBRARY_DEBUG VRUtild)
+
+FIND_VRE3FRAME_LIBRARY(VRE3FRAME_OSGQTQUICK_LIBRARY osgqtquick)
+FIND_VRE3FRAME_LIBRARY(VRE3FRAME_OSGQTQUICK_LIBRARY_DEBUG osgqtquickd)
+
+FIND_VRE3FRAME_LIBRARY(VRE3FRAME_EARTH2DPLUGIN_LIBRARY Earth2DPlugin)
+FIND_VRE3FRAME_LIBRARY(VRE3FRAME_EARTH2DPLUGIN_LIBRARY_DEBUG Earth2DPlugind)
+
+FIND_VRE3FRAME_LIBRARY(VRE3FRAME_CUSTOMMANIPULATOR_LIBRARY CustomManipulator)
+FIND_VRE3FRAME_LIBRARY(VRE3FRAME_CUSTOMMANIPULATOR_LIBRARY_DEBUG CustomManipulatord)
+
+
+#include(${CMAKE_CURRENT_LIST_DIR}/FindPackageHandleStandardArgs.cmake)
+#FIND_PACKAGE_HANDLE_STANDARD_ARGS(VRMAINFRAME VRMAINFRAME_INCLUDE_DIR VRMAINFRAME_LIBRARY VRMAINFRAME_LIBRARY_DEBUG)
+
+
+

@@ -1,0 +1,23 @@
+#ifndef ${Class_File_Name}_h__
+#define ${Class_File_Name}_h__
+
+#include <string>
+#include <vector>
+#include <map>
+#include <list>
+
+class ${Class_File_Name}
+{
+public:
+	${Class_File_Name}();
+	~${Class_File_Name}();
+
+public:
+	
+protected:
+	
+private:
+
+};
+
+#endif // ${Class_File_Name}_h__

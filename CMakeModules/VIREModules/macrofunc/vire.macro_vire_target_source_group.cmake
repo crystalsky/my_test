@@ -1,0 +1,9 @@
+include(macro_target_source_group)
+
+MACRO(VIRE_TARGET_SOURCE_GROUP target_name)
+   TARGET_SOURCE_GROUP(${target_name})
+ENDMACRO()
+
+MACRO(VIRE_SOURCE_GROUP)
+    TARGET_SOURCE_GROUP(${LIB_NAME})
+ENDMACRO(VIRE_SOURCE_GROUP)

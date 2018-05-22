@@ -1,0 +1,22 @@
+#ifndef ${LIBRARY_NAME}_Export_h__
+#define ${LIBRARY_NAME}_Export_h__
+
+#cmakedefine USE_STATIC_LIBRARY
+
+#if defined(_MSC_VER) || defined(__CYGWIN__) || defined(__MINGW32__) || defined( __BCPLUSPLUS__)  || defined( __MWERKS__)
+#  if defined( ${LIBRARY_NAME}_LIBRARY_STATIC )
+#    define ${LIBRARY_NAME}_Export
+#  elif defined( ${LIBRARY_NAME}_LIBRARY )
+#    define ${LIBRARY_NAME}_Export __declspec(dllexport)
+#  else
+#    define ${LIBRARY_NAME}_Export __declspec(dllimport)
+#  endif
+#else
+#  ifdef ${LIBRARY_NAME}_LIBRARY
+#    define ${LIBRARY_NAME}_Export  __attribute__ ((visibility("default")))
+#  else
+#    define ${LIBRARY_NAME}_Export
+#  endif
+#endif
+
+#endif // ${LIBRARY_NAME}_Export_h__

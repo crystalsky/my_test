@@ -1,0 +1,10 @@
+
+INCLUDE(macro_set_target_properties_project)
+
+MACRO(VIRE_SET_TARGET_PROPERTIES_LABEL_FOLDER _Target _Folder)
+  SET_TARGET_PROPERTIES_PROJECT(${_Target} 
+    PROJECT_FOLDER ${_Folder} 
+    QT_VS_KEYWORD "Qt4VSv1.0" 
+    ${ARGN}
+  )
+ENDMACRO(VIRE_SET_TARGET_PROPERTIES_LABEL_FOLDER _Target _Folder)

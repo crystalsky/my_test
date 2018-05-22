@@ -21,7 +21,7 @@ if(Build_General_Project)
 
 	OPTION(BUILD_QtExe OFF "BUILD_QtExe Test Qt Specific Characteristic Functions....")
 	IF(BUILD_QtExe)
-		ADD_SUBDIRECTORY(QtStudy/QtExe2)
+		ADD_SUBDIRECTORY(QtStudy/QtExe)
 	ENDIF()
 
 
@@ -43,8 +43,8 @@ ELSEIF(NOT Build_General_Project AND Build_ICE_Project)
 	ADD_SUBDIRECTORY(ice)
 ELSEIF(Build_CMakeTest_Project)
 	ADD_SUBDIRECTORY(cmake_test)
-ELSE()
-	
+ELSE(Build_Boost_Project)
+	ADD_SUBDIRECTORY(boost_test)
 ENDIF()
 
 #ADD_SUBDIRECTORY(QtStudy/PickColorApp)

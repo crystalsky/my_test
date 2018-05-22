@@ -1,0 +1,13 @@
+#include "${Class_File_Name}.h"
+
+${Class_File_Name}::${Class_File_Name}(${Parent_Class}* parent)
+	: ${Parent_Class}(parent)
+{
+	
+}
+
+${Class_File_Name}::~${Class_File_Name}()
+{
+	
+}
+

@@ -1,0 +1,82 @@
+#include "${LIB_NAME}.h"
+
+#include <VRMainFrame/mainwindow.h>
+#include <VRMainFrame/editorevents.h>
+#include <VRMainFrame/editordata.h>
+#include <VRMainFrame/pluginmanager.h>
+#include <dtCore/map.h>
+
+const std::string ${LIB_NAME}::PLUGIN_NAME = "${LIB_NAME}";
+
+${LIB_NAME}::${LIB_NAME}(VRMainFrame::MainWindow* mw)
+	: _mainWindow(mw)
+{
+	
+}
+
+${LIB_NAME}::~${LIB_NAME}()
+{
+	
+}
+
+void ${LIB_NAME}::Create()
+{
+		
+}
+
+void ${LIB_NAME}::Destroy()
+{
+
+}
+
+void ${LIB_NAME}::OnMessage( MessageData* msg )
+{
+
+}
+
+class ${LIB_NAME}_Export ${LIB_NAME}Factory : public VRMainFrame::PluginFactory
+{
+public:
+	${LIB_NAME}Factory(){mIsSystemPlugin = true;}
+	virtual ~${LIB_NAME}Factory(){}
+	
+	virtual std::string GetName()
+	{
+		return ${LIB_NAME}::PLUGIN_NAME;
+	}
+
+	virtual VRMainFrame::Plugin* Create(VRMainFrame::MainWindow* mw)
+	{
+		_plugin = new ${LIB_NAME}(mw);
+		return _plugin;
+	}
+
+	virtual std::string GetDescription()
+	{
+		return " ";
+	}
+
+	virtual void Destroy()
+	{
+		_plugin->Destroy();
+		delete _plugin;
+	}
+
+	VRMainFrame::Plugin* getPlugin()
+	{
+		return _plugin;
+	}
+
+	virtual void GetDependencies(std::list<std::string>&container)
+	{		
+	
+	}
+
+private:
+	VRMainFrame::Plugin* _plugin;
+};
+
+extern "C" ${LIB_NAME}_Export VRMainFrame::PluginFactory* CreatePluginFactory()
+{
+	return new ${LIB_NAME}Factory;
+}

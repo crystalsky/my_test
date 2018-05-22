@@ -1,0 +1,5 @@
+macro(macro_mark_as_advanced)
+    foreach(varname ${ARGN})
+        mark_as_advanced(${varname})
+    endforeach()
+endmacro()

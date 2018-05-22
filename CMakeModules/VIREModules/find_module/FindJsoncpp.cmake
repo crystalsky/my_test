@@ -1,0 +1,38 @@
+
+#//////////////////////////////////////////////////////////
+#设置依赖库前缀名称（CMAKE上显示的名称）
+SET(LIB_DEPEND_NAME JSONCPP)
+#//////////////////////////////////////////////////////////
+SET(${LIB_DEPEND_NAME}_SERACH_PATHS ${${LIB_DEPEND_NAME}_ROOT}
+    ${${LIB_DEPEND_NAME}_DIR}
+    ${${LIB_DEPEND_NAME}_ROOT_PATH}
+    $ENV{${LIB_DEPEND_NAME}_ROOT}
+    $ENV{${LIB_DEPEND_NAME}_DIR}
+    $ENV{${LIB_DEPEND_NAME}_ROOT_PATH})
+#//////////////////////////////////////////////////////////
+
+#MESSAGE("ICE_FIND_COMPONENTS = ${ICE_FIND_COMPONENTS}")
+
+FIND_DEPEND_INCLUDE_DIR(
+  ${LIB_DEPEND_NAME} 
+  json.h
+  PATHS 
+  ${${LIB_DEPEND_NAME}_SERACH_PATHS}
+)
+
+FIND_DEPEND_LIBRARY(JSONCPP jsoncpp VERSIONED_LIB
+  PATHS 
+  ${${LIB_DEPEND_NAME}_SERACH_PATHS}
+)
+
+#打包
+IF(CMAKE_BUILD_TYPE MATCHES Debug)
+    FILE(GLOB ZCHX_ICE_DLL_DEBUG "${ICE_PATH}/bin/debug/*.dll")
+    INSTALL(FILES ${ZCHX_ICE_DLL_DEBUG} DESTINATION bin)
+    
+ELSE(CMAKE_BUILD_TYPE MATCHES Debug)
+
+    FILE(GLOB ZCHX_ICE_DLL_RELEASE "${ICE_PATH}/bin/release/*.dll")
+    INSTALL(FILES ${ZCHX_ICE_DLL_RELEASE} DESTINATION bin)
+    
+ENDIF(CMAKE_BUILD_TYPE MATCHES Debug)

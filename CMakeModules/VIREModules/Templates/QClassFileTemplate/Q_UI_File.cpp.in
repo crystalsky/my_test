@@ -1,0 +1,16 @@
+#include "${Class_File_Name}.h"
+#include "ui_${Class_File_Name}.h"
+
+${Class_File_Name}::${Class_File_Name}(QWidget * parent, Qt::WindowFlags f)
+	: ${Parent_Class}(parent, f)
+	, m_pUI(new Ui::${Class_File_Name}())
+{
+	m_pUI->setupUi(this);
+}
+
+${Class_File_Name}::~${Class_File_Name}()
+{
+	delete m_pUI;
+	m_pUI = NULL;
+}
+

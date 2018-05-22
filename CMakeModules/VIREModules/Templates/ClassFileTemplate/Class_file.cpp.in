@@ -1,0 +1,12 @@
+#include "${Class_File_Name}.h"
+
+${Class_File_Name}::${Class_File_Name}()
+{
+	
+}
+
+${Class_File_Name}::~${Class_File_Name}()
+{
+	
+}
+

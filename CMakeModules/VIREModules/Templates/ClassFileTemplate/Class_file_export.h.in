@@ -1,0 +1,24 @@
+#ifndef ${Class_File_Name}_h__
+#define ${Class_File_Name}_h__
+
+#include "${LIBRARY_NAME}_Export.h"
+#include <string>
+#include <vector>
+#include <map>
+#include <list>
+
+class ${LIBRARY_NAME}_Export ${Class_File_Name}
+{
+public:
+	${Class_File_Name}();
+	~${Class_File_Name}();
+
+public:
+	
+protected:
+	
+private:
+
+};
+
+#endif // ${Class_File_Name}_h__

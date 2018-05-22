@@ -1,0 +1,47 @@
+#ifndef ${LIB_NAME}_h__
+#define ${LIB_NAME}_h__
+
+#include "${LIB_NAME}_Export.h"
+#include <VRMainFrame/plugininterface.h>
+#include <QObject>
+#include <QList>
+#include <QDateTime>
+#include <QAction>
+#include <QDebug>
+#include <QShortcut>
+#include <QShortcutEvent>
+#include <QKeySequence>
+#include <QDir>
+#include <QFileInfo>
+#include "VRActors/typedefs.h"
+
+namespace VRMainFrame
+{
+	class MainWindow;
+}
+
+class ${LIB_NAME}_Export ${LIB_NAME}
+	: public QObject
+	, public VRMainFrame::Plugin
+{
+	Q_OBJECT
+public:
+	${LIB_NAME}(VRMainFrame::MainWindow* mw);
+	~${LIB_NAME}();
+
+	void Create();
+	void Destroy();
+
+public:
+	virtual void OnMessage(MessageData* msg);
+	
+protected Q_SLOTS:
+	
+public:
+	const static std::string PLUGIN_NAME;
+
+private:
+	VRMainFrame::MainWindow* _mainWindow;
+};
+
+#endif // ${LIB_NAME}_h__

@@ -1,0 +1,98 @@
+#
+# Try to find FREEGLUT library and include path.
+# Once done this will define
+#
+# FREEGLUT_FOUND
+# FREEGLUT_INCLUDE_PATH
+# FREEGLUT_LIBRARY
+# 
+
+include(FindPkgMacros)
+
+# get home path
+#getenv_path(FREEGLUT_HOME)
+
+IF (WIN32)
+	FIND_PATH( FREEGLUT_INCLUDE_DIR GL/freeglut.h
+		$ENV{PROGRAMFILES}/FREEGLUT/include
+		"${ENV_FREEGLUT_HOME}/include"
+		"${FREEGLUT_DIR}/include"
+		DOC "The directory where GL/glew.h resides")
+
+	FIND_LIBRARY( FREEGLUT_LIBRARY_DEBUG
+		NAMES freeglutd
+		PATHS
+		"${FREEGLUT_DIR}/lib"
+		DOC "The FREEGLUT Debug library")
+
+	FIND_LIBRARY( FREEGLUT_LIBRARY
+		NAMES freeglut
+		PATHS
+		"${FREEGLUT_DIR}/lib"
+		DOC "The FREEGLUT library")
+
+	FIND_LIBRARY( FREEGLUT_LIBRARY_STATIC_DEBUG
+		NAMES freeglut_staticd
+		PATHS
+		"${FREEGLUT_DIR}/lib"
+		DOC "The FREEGLUT Debug library")
+
+	FIND_LIBRARY( FREEGLUT_LIBRARY_STATIC
+		NAMES freeglut_static
+		PATHS
+		"${FREEGLUT_DIR}/lib"
+		DOC "The FREEGLUT library")
+ELSE (WIN32)
+	FIND_PATH( FREEGLUT_INCLUDE_DIR GL/glew.h
+		/usr/include
+		/usr/local/include
+		/sw/include
+		/opt/local/include
+		DOC "The directory where GL/glew.h resides")
+	FIND_LIBRARY( FREEGLUT_LIBRARY
+		NAMES FREEGLUT glew
+		PATHS
+		/usr/lib64
+		/usr/lib
+		/usr/local/lib64
+		/usr/local/lib
+		/sw/lib
+		/opt/local/lib
+		DOC "The FREEGLUT library")
+ENDIF (WIN32)
+
+include(macro_find_package_handle_standard_args)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(FREEGLUT
+	FOUND_VAR FREEGLUT_FOUND 	
+	REQUIRED_VARS FREEGLUT_INCLUDE_DIR 
+	FREEGLUT_LIBRARY 
+	FREEGLUT_LIBRARY_DEBUG
+)
+MESSAGE(STATUS "FREEGLUT_FOUND...............${FREEGLUT_FOUND}")
+IF(NOT FREEGLUT_FOUND)
+	MESSAGE(FATAL_ERROR "--FREEGLUT not found")
+ENDIF(NOT FREEGLUT_FOUND)
+
+if(FREEGLUT_FOUND)
+	set(FREEGLUT_LIBRARIES ${FREEGLUT_LIBRARY_DEBUG} ${FREEGLUT_LIBRARY})
+	
+	include(util.common_make_import_target)
+	COMMON_MAKE_IMPORT_TARGET_BASE(FREEGLUT FREEGLUT_STATIC
+		${FREEGLUT_INCLUDE_DIR}
+		${FREEGLUT_LIBRARY_STATIC_DEBUG}
+		${FREEGLUT_LIBRARY_STATIC}
+	)
+
+	COMMON_MAKE_IMPORT_TARGET_BASE(FREEGLUT FREEGLUT
+		${FREEGLUT_INCLUDE_DIR}
+		${FREEGLUT_LIBRARY_DEBUG}
+		${FREEGLUT_LIBRARY}
+	)
+endif()
+
+mark_as_advanced(
+  FREEGLUT_INCLUDE_DIR
+  FREEGLUT_LIBRARY_DEBUG
+  FREEGLUT_LIBRARY
+)
+

@@ -1,0 +1,32 @@
+1 VERSIONINFO
+ FILEVERSION ${${_Taget_}_MajorVersion}, ${${_Taget_}_MinorVersion}, ${${_Taget_}_PatchVersion}, ${${_Taget_}_SOVersion}
+ PRODUCTVERSION ${${_Taget_}_MajorVersion}, ${${_Taget_}_MinorVersion}, ${${_Taget_}_PatchVersion}, ${${_Taget_}_SOVersion}
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x0L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+			VALUE "CompanyName", "${${_Taget_}_CompanyName}"
+            VALUE "FileDescription", "${${_Taget_}_FileDescription}"
+            VALUE "FileVersion", "${${_Taget_}_MajorVersion}, ${${_Taget_}_MinorVersion}, ${${_Taget_}_PatchVersion}, ${${_Taget_}_SOVersion}"
+            VALUE "InternalName", "${${_Taget_}_InternalName}"
+            VALUE "LegalCopyright", "${${_Taget_}_LegalCopyright}"
+            VALUE "OriginalFilename", "${${_Taget_}_OriginalFilename}"
+            VALUE "ProductName", "${${_Taget_}_ProductName}"
+            VALUE "ProductVersion", "${${_Taget_}_MajorVersion}, ${${_Taget_}_MinorVersion}, ${${_Taget_}_PatchVersion}, ${${_Taget_}_SOVersion}"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

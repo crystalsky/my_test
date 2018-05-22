@@ -25,7 +25,7 @@ ENDMACRO()
 
 #===================================================================
 #三方库子目录确定
-MACRO(_SET_OTHER_DEPENDS_DIR path)
+MACRO(_SET_OTHER_DEPENDS_DIR)
     #===================================================================
     #SET_DEPENDS_DIR(OSG             "${THIRD_PART_ROOT}/OSG(3.2.1)")
     
@@ -84,10 +84,10 @@ ENDMACRO()
 #===================================================================
 
 
-MACRO(THIRD_PART_SET path)
+MACRO(THIRD_PART_SET)
     #_SET_OSG_OSGEARTH_DELTA3D_DIR()
 
-    _SET_OTHER_DEPENDS_DIR(${path})
+    _SET_OTHER_DEPENDS_DIR()
 ENDMACRO()
 
 

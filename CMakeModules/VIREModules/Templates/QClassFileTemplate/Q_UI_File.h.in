@@ -1,0 +1,35 @@
+#ifndef ${Class_File_Name}_h__
+#define ${Class_File_Name}_h__
+
+#include <${Parent_Class}>
+#include <QtCore>
+#include <QtGui>
+#include <QtWidgets>
+
+namespace Ui 
+{
+	class ${Class_File_Name};
+}
+
+class ${Class_File_Name} : public ${Parent_Class}
+{
+	Q_OBJECT
+Q_SIGNALS:
+	//信号
+	
+	
+public:
+	explicit ${Class_File_Name}(QWidget * parent = 0, Qt::WindowFlags f = 0);
+	~${Class_File_Name}();
+
+public:
+	
+protected Q_SLOTS:
+		
+protected:
+
+private:
+	Ui::${Class_File_Name}* m_pUI;
+};
+
+#endif // ${Class_File_Name}_h__

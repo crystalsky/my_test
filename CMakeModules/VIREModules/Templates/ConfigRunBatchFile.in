@@ -1,0 +1,5 @@
+%~d0
+cd %~dp0
+set path=${ADDON_PATH}%path%
+
+start ${RUN_EXE}.exe

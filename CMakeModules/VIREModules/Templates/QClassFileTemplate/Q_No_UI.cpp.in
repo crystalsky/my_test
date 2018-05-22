@@ -1,0 +1,13 @@
+#include "${Class_File_Name}.h"
+
+${Class_File_Name}::${Class_File_Name}(QWidget * parent, Qt::WindowFlags f)
+	: ${Parent_Class}(parent, f)
+{
+	
+}
+
+${Class_File_Name}::~${Class_File_Name}()
+{
+	
+}
+

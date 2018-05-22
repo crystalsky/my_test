@@ -1,0 +1,36 @@
+
+// VIRECONFIG.H
+
+#ifndef VIRECONFIG_H
+#define VIRECONFIG_H
+
+namespace Core {
+namespace Constants {
+
+#define STRINGIFY_INTERNAL(x) #x
+#define STRINGIFY(x) STRINGIFY_INTERNAL(x)
+
+#define VIRE_VERSION "${PACKAGE_VERSION}"
+#define VIRE_VERSION_STR STRINGIFY(VIRE_VERSION)
+
+const char * const VIRE_VERSION_LONG      = VIRE_VERSION_STR;
+const char * const VIRE_AUTHOR            = "Shenzhen Centerstar Seainfo Co.,Ltd.";
+const char * const VIRE_YEAR              = "2012";
+
+// changes the path where the settings are saved to
+#ifdef VIRE_SETTINGSVARIANT
+const char * const VIRE_SETTINGSVARIANT_STR      = STRINGIFY(VIRE_SETTINGSVARIANT);
+#else
+const char * const VIRE_SETTINGSVARIANT_STR      = "VIRE";
+#endif
+
+#undef VIRE_VERSION
+#undef VIRE_VERSION_STR
+#undef STRINGIFY
+#undef STRINGIFY_INTERNAL
+
+} // Constants
+} // Core
+
+#endif //VIRECONFIG.H
+

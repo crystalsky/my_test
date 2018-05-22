@@ -1,0 +1,16 @@
+macro(search_include_dir dir)
+    FILE(GLOB_RECURSE _dir_all_files "${dir}/*.h" "${dir}/*.inl" "${dir}/*.hpp")
+
+    MESSAGE(STATUS "seach_include_dir files == ${_dir_all_files}")
+    set(_cur_dir ${dir})
+    foreach(sgbd_file ${_dir_all_files})
+        string(REGEX REPLACE ${_cur_dir}/\\w+/\(.*\) \\1 sgbd_fpath ${sgbd_file})
+        MESSAGE(STATUS "1.${sgbd_fpath}")
+        string(REGEX REPLACE "\(.*\)/.*" \\1 sgbd_group_name ${sgbd_fpath})
+        MESSAGE(STATUS "2.${sgbd_group_name}")
+
+        #if(sgbd_nogroup)
+            #set(sgbd_group_name "#_NoGroupedFiles_#_")
+        #endif(sgbd_nogroup)
+    endforeach()
+endmacro()

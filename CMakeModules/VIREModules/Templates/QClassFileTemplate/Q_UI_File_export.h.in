@@ -1,0 +1,41 @@
+#ifndef ${Class_File_Name}_h__
+#define ${Class_File_Name}_h__
+
+#include "${LIBRARY_NAME}_Export.h"
+#include <${Parent_Class}>
+#include <QList>
+#include <QMap>
+#include <QDebug>
+#include <assert.h>
+#include <QHBoxLayOut>
+#include <QVBoxLayOut>
+#include <QLabel>
+#include <QPushButton>
+#include <QSpacerItem>
+
+namespace Ui 
+{
+	class ${Class_File_Name};
+}
+
+class ${LIBRARY_NAME}_Export ${Class_File_Name} : public ${Parent_Class}
+{
+	Q_OBJECT
+Q_SIGNALS:
+	//信号
+	
+public:
+	explicit ${Class_File_Name}(QWidget * parent = 0, Qt::WindowFlags f = 0);
+	~${Class_File_Name}();
+
+public:
+	
+protected Q_SLOTS:
+		
+protected:
+
+private:
+	Ui::${Class_File_Name}* m_pUI;
+};
+
+#endif // ${Class_File_Name}_h__
