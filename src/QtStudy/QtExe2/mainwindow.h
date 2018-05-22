@@ -6,6 +6,28 @@
 #include <QtGui>
 #include <QtWidgets>
 
+class myObject : public QObject
+{
+	Q_OBJECT
+public:
+	myObject() {}
+	~myObject() {}
+
+	public slots:
+		void first() 
+		{
+			qDebug()<< QThread::currentThreadId();
+		}
+		void second() 
+		{
+			qDebug()<< QThread::currentThreadId();
+		}
+		void third() 
+		{
+			qDebug()<< QThread::currentThreadId();
+		}
+};
+
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT
@@ -19,10 +41,14 @@ public:
 
 public:
 	
-protected Q_SLOTS:
-		
-protected:
 
+	public slots:
+		void onFirstPushed();
+		void onSelfPushed();
+		void onPMY();
+protected:
+	myObject *my;
+	QPushButton *firstButton,*secondButton,*thirdButton,*selfButton;
 private:
 
 };

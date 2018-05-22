@@ -21,7 +21,7 @@ if(Build_General_Project)
 
 	OPTION(BUILD_QtExe OFF "BUILD_QtExe Test Qt Specific Characteristic Functions....")
 	IF(BUILD_QtExe)
-		ADD_SUBDIRECTORY(QtStudy/QtExe)
+		ADD_SUBDIRECTORY(QtStudy/QtExe2)
 	ENDIF()
 
 

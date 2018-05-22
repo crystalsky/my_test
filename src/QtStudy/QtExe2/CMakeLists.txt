@@ -19,6 +19,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 INCLUDE_DIRECTORIES(${RIBBON_INCLUDE_DIR}
 	${TINYXML_INCLUDE_DIR}
 	${DEFAULT_INCLUDE_SUBDIR}
+	${Boost_INCLUDE_DIR}
 )
 
 #===================================================
@@ -72,7 +73,7 @@ ADD_EXECUTABLE(${APPLICATION_NAME}
 #===================================================
 #ÉèÖÃLinkÒÀÀµ°ü
 TARGET_LINK_LIBRARIES(${APPLICATION_NAME}
-	
+	Boost::thread
 )
 
 ADD_3RD_DEPENDENCIES(${APPLICATION_NAME} 
