@@ -2,7 +2,7 @@ SET(LIB_NAME QtColorPickerLib)
 
 MESSAGE("**********************Setting up ${LIB_NAME}********************")
 
-# 定义项目版本
+# 锟斤拷锟斤拷锟斤拷目锟芥本
 SET(CPACK_PACKAGE_VERSION_MAJOR 1)
 SET(CPACK_PACKAGE_VERSION_MINOR 1)
 SET(CPACK_PACKAGE_VERSION_PATCH 2)
@@ -15,7 +15,7 @@ ADD_DEFINITIONS(-DQTCOLORPICKER_LIBRARY)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON) 
  
-# 设置QT UI文件
+# 锟斤拷锟斤拷QT UI锟侥硷拷
 FILE(GLOB QT_UIS "*.ui")
 FILE(GLOB LIB_QT_RCS "*.qrc")
 
@@ -35,7 +35,7 @@ ELSE()
 	QT4_WRAP_CPP( MOC_UI_SRCS ${UI_HDRS} OPTIONS "-f" )
 ENDIF()
 
-# 设置头文件
+# 锟斤拷锟斤拷头锟侥硷拷
 FILE(GLOB ${LIB_NAME}_SRCS "*.cpp" )
 FILE(GLOB ${LIB_NAME}_HEADERS "./*.h")
 
@@ -46,10 +46,10 @@ FILE(GLOB ${LIB_NAME}_HEADERS "./*.h")
 INCLUDE_DIRECTORIES(
 	${CMAKE_CURRENT_BINARY_DIR}
 	${UI_HDRS}
-	${DEFAULT_INCLUDE_SUBDIR}
+	${PROJECT_INCLUDE_DIR}
 )
 
-#打包相关文件成可执行文件
+#锟斤拷锟斤拷锟斤拷锟侥硷拷锟缴匡拷执锟斤拷锟侥硷拷
 ADD_LIBRARY(${LIB_NAME} SHARED
    ${${LIB_NAME}_HEADERS}
    ${${LIB_NAME}_SRCS}
@@ -57,7 +57,7 @@ ADD_LIBRARY(${LIB_NAME} SHARED
    ${LIB_RC_SRCS}
 )
 
-#设置Link依赖包
+#锟斤拷锟斤拷Link锟斤拷锟斤拷锟斤拷
 TARGET_LINK_LIBRARIES(${LIB_NAME}
 )
 
@@ -76,28 +76,28 @@ ${QT_LIBRARIES}
 )
 ENDIF( Qt5Widgets_FOUND )
 
-# 设置与QT designer 集成
+# 锟斤拷锟斤拷锟斤拷QT designer 锟斤拷锟斤拷
 SET_TARGET_PROPERTIES(${LIB_NAME} PROPERTIES VS_KEYWORD "Qt4VSv1.0")
 
-# 设置项目标签.
+# 锟斤拷锟斤拷锟斤拷目锟斤拷签.
 SET_PROPERTY(GLOBAL PROPERTY USE_FOLDERS On)
 SET_TARGET_PROPERTIES(${LIB_NAME} PROPERTIES FOLDER "Lib")
 
-# 设置工程的属性
+# 锟斤拷锟矫癸拷锟教碉拷锟斤拷锟斤拷
 SET ( TARGET_OUTPUT_NAME ${LIB_NAME} )
 SET_TARGET_PROPERTIES( ${LIB_NAME} PROPERTIES OUTPUT_NAME ${TARGET_OUTPUT_NAME} )
 
-# 设置项目标签.
+# 锟斤拷锟斤拷锟斤拷目锟斤拷签.
 SET_TARGET_PROPERTIES(${LIB_NAME} PROPERTIES PROJECT_LABEL "QtLib ${LIB_NAME}")
  
-# QT 临时产生文件分组
+# QT 锟斤拷时锟斤拷锟斤拷锟侥硷拷锟斤拷锟斤拷
 SOURCE_GROUP(
     "Generated Files"
     FILES 
 		${MOC_UI_SRCS}
 )
 
-# QT UI文件分组
+# QT UI锟侥硷拷锟斤拷锟斤拷
 SOURCE_GROUP(
     "Form Files"
     FILES  
@@ -107,7 +107,7 @@ SOURCE_GROUP(
 )
 
 
-#输出到上级目录，取消debug, release 目录
+#锟斤拷锟斤拷锟斤拷霞锟侥柯硷拷锟饺★拷锟絛ebug, release 目录
 IF (MSVC_IDE) 
 	SET_TARGET_PROPERTIES( ${LIB_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY  ${PROJECT_SOURCE_DIR}/bin )
 	SET_TARGET_PROPERTIES( ${LIB_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin/Debug )

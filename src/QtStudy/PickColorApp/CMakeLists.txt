@@ -1,9 +1,9 @@
 SET(APPLICATION_NAME PickColorApp)
 
-SET(APPLICATION_DESCRIPTION_SUMMARY  "²âÊÔÆô¶¯³ÌÐò")
+SET(APPLICATION_DESCRIPTION_SUMMARY  "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
 MESSAGE("**********************Setting up ${APPLICATION_NAME}********************")
 
-# ¶¨ÒåÏîÄ¿°æ±¾
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½æ±¾
 SET(CPACK_PACKAGE_VERSION_MAJOR 1)
 SET(CPACK_PACKAGE_VERSION_MINOR 1)
 SET(CPACK_PACKAGE_VERSION_PATCH 2)
@@ -21,7 +21,7 @@ ADD_DEFINITIONS(-DCONSOLE)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON) 
  
-# ÉèÖÃQT UIÎÄ¼þ
+# ï¿½ï¿½ï¿½ï¿½QT UIï¿½Ä¼ï¿½
 FILE(GLOB QT_UIS "*.ui")
 FILE(GLOB LIB_QT_RCS "*.qrc")
 
@@ -41,18 +41,18 @@ ELSE()
 	QT4_WRAP_CPP( MOC_UI_SRCS ${UI_HDRS} OPTIONS "-f" )
 ENDIF()
 
-# ÉèÖÃÍ·ÎÄ¼þ
+# ï¿½ï¿½ï¿½ï¿½Í·ï¿½Ä¼ï¿½
 FILE(GLOB ${APPLICATION_NAME}_SRCS "*.cpp" )
 FILE(GLOB ${APPLICATION_NAME}_HEADERS "./*.h")
 
 INCLUDE_DIRECTORIES(
 	${CMAKE_CURRENT_BINARY_DIR}
 	${UI_HDRS}
-	${DEFAULT_INCLUDE_SUBDIR}
+	${PROJECT_INCLUDE_DIR}
 	
 )
 INCLUDE_DIRECTORIES(${PROJECT_SRC_DIR}/library_src/color_picker)
-#´ò°üÏà¹ØÎÄ¼þ³É¿ÉÖ´ÐÐÎÄ¼þ
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½É¿ï¿½Ö´ï¿½ï¿½ï¿½Ä¼ï¿½
 ADD_EXECUTABLE(${APPLICATION_NAME} 
    ${${APPLICATION_NAME}_HEADERS}
    ${${APPLICATION_NAME}_SRCS}
@@ -61,7 +61,7 @@ ADD_EXECUTABLE(${APPLICATION_NAME}
   
 )
 
-#ÉèÖÃLinkÒÀÀµ°ü
+#ï¿½ï¿½ï¿½ï¿½Linkï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 TARGET_LINK_LIBRARIES(${APPLICATION_NAME}
 	${XMLFOUNDATION_LIBRARIES}
 	QtColorPickerLib
@@ -88,29 +88,29 @@ ENDIF( Qt5Widgets_FOUND )
 #configure_file(app.config ${PROJECT_SOURCE_DIR}/bin/Debug @ONLY) 
 #configure_file(app.config ${PROJECT_SOURCE_DIR}/bin/Release @ONLY) 
 
-# ÉèÖÃ¹¤³ÌµÄÊôÐÔ
+# ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½
 SET (TARGET_OUTPUT_NAME ${APPLICATION_NAME} )
 SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES OUTPUT_NAME ${TARGET_OUTPUT_NAME} )
 SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES DEBUG_OUTPUT_NAME "${TARGET_OUTPUT_NAME}${CMAKE_DEBUG_POSTFIX}")
 SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES RELEASE_OUTPUT_NAME "${TARGET_OUTPUT_NAME}${CMAKE_RELEASE_POSTFIX}")
 
-# ÉèÖÃÓëQT designer ¼¯³É
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½QT designer ï¿½ï¿½ï¿½ï¿½
 SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES VS_KEYWORD "Qt4VSv1.0")
 
 
  
-# ÉèÖÃÏîÄ¿±êÇ©.
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ç©.
 SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES PROJECT_LABEL "App ${APPLICATION_NAME}")
 SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES FOLDER "App") 
  
-# QT ÁÙÊ±²úÉúÎÄ¼þ·Ö×é
+# QT ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 SOURCE_GROUP(
     "Generated Files"
     FILES 
 		${MOC_UI_SRCS}
 )
 
-# QT UIÎÄ¼þ·Ö×é
+# QT UIï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 SOURCE_GROUP(
     "Form Files"
     FILES  
@@ -160,7 +160,7 @@ SOURCE_GROUP(
 		${TinyXML_SRCS}
 )
 
-#Êä³öµ½ÉÏ¼¶Ä¿Â¼£¬È¡Ïûdebug, release Ä¿Â¼
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½Ä¿Â¼ï¿½ï¿½È¡ï¿½ï¿½debug, release Ä¿Â¼
 IF (MSVC_IDE) 
 	SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY  ${PROJECT_SOURCE_DIR}/bin )
 	SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin/Debug )
@@ -170,14 +170,14 @@ ENDIF()
 
 
 
-# debug °²×°
+# debug ï¿½ï¿½×°
 INSTALL(
 TARGETS ${APPLICATION_NAME}
 RUNTIME DESTINATION bin/Debug
 )
 	
 
-# release °²×°
+# release ï¿½ï¿½×°
 INSTALL(
 TARGETS ${APPLICATION_NAME}
 RUNTIME DESTINATION bin/release

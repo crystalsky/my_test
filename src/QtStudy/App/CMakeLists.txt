@@ -5,7 +5,7 @@ SET(APPLICATION_NAME QtExe)
 BEGIN_TARGET(${APPLICATION_NAME})
 
 #===================================================
-# ¶¨ÒåÏîÄ¿°æ±¾
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½æ±¾
 VERSIONED_TARGET(${APPLICATION_NAME} 1 0 0 102)
 
 # Note the version no is Mmmpp for Major/minor/patch, 0-padded, thus '10100' for 1.1.0
@@ -21,7 +21,7 @@ INCLUDE_DIRECTORIES(${RIBBON_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${OSG_INCLUDE_DIR} ${QT_INCLUDES})  
 INCLUDE_DIRECTORIES(${OPENTHREADS_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
-INCLUDE_DIRECTORIES(${DEFAULT_INCLUDE_SUBDIR})
+INCLUDE_DIRECTORIES(${PROJECT_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${PROJECT_SRC_DIR}/library_src/glog)
 INCLUDE_DIRECTORIES(${PROJECT_SRC_DIR}/library_src/QtUtility)
 INCLUDE_DIRECTORIES(${PROJECT_SRC_DIR}/library_src/color_picker)
@@ -40,16 +40,16 @@ MAKE_CLASS_FILES(${APPLICATION_NAME}
 	SUB_DIR_NAME "OSGStudy" 
 	widget_OSGStudy)
 #===================================================
-#ÉèÖÃUI×ÊÔ´
+#ï¿½ï¿½ï¿½ï¿½UIï¿½ï¿½Ô´
 FILE(GLOB ${APPLICATION_NAME}_QT_UIS "*.ui")
 
-# ÉèÖÃÍ¼Æ¬×ÊÔ´
+# ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Ô´
 FILE(GLOB ${APPLICATION_NAME}_QT_RCS "*.qrc")
 
-# ÉèÖÃh´úÂë
+# ï¿½ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½ï¿½
 FILE(GLOB ${APPLICATION_NAME}_HEADERS "*.h")
 
-# ÉèÖÃcpp´úÂë
+# ï¿½ï¿½ï¿½ï¿½cppï¿½ï¿½ï¿½ï¿½
 FILE(GLOB ${APPLICATION_NAME}_SRCS "*.cpp")
 #===================================================
 VIRE_TARGET_SERACH_SUB_DIRS_FILES(${APPLICATION_NAME} 
@@ -61,7 +61,7 @@ VIRE_TARGET_SERACH_SUB_DIRS_FILES(${APPLICATION_NAME}
 )
 
 #===================================================
-#Qt´¦ÀíUIºÍQRCÎÄ¼þ
+#Qtï¿½ï¿½ï¿½ï¿½UIï¿½ï¿½QRCï¿½Ä¼ï¿½
 VIRE_TARGET_PROCESS_QT_RESOURCES_UIS(${APPLICATION_NAME})
 
 file(TIMESTAMP ./main.cpp TT)
@@ -82,14 +82,14 @@ SET(_${APPLICATION_NAME}_CPP
 	${${APPLICATION_NAME}_QT_RCS}
 )
 
-#´ò°üÏà¹ØÎÄ¼þ³É¿ÉÖ´ÐÐÎÄ¼þ
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½É¿ï¿½Ö´ï¿½ï¿½ï¿½Ä¼ï¿½
 ADD_EXECUTABLE(${APPLICATION_NAME} 
 	${_${APPLICATION_NAME}_HEADER}
 	${_${APPLICATION_NAME}_CPP}
 )
 
 #===================================================
-#ÉèÖÃLinkÒÀÀµ°ü
+#ï¿½ï¿½ï¿½ï¿½Linkï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 TARGET_LINK_LIBRARIES(${APPLICATION_NAME}
 	${XMLFOUNDATION_LIBRARIES}
 	glog
@@ -121,16 +121,16 @@ ENDIF( Qt5Widgets_FOUND )
 #configure_file(app.config ${PROJECT_SOURCE_DIR}/bin/Debug @ONLY) 
 #configure_file(app.config ${PROJECT_SOURCE_DIR}/bin/Release @ONLY) 
 
-# ÉèÖÃ¹¤³ÌµÄÊôÐÔ
+# ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½
 SET (TARGET_OUTPUT_NAME ${APPLICATION_NAME} )
 SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES OUTPUT_NAME ${TARGET_OUTPUT_NAME} )
 SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES DEBUG_OUTPUT_NAME "${TARGET_OUTPUT_NAME}${CMAKE_DEBUG_POSTFIX}")
 SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES RELEASE_OUTPUT_NAME "${TARGET_OUTPUT_NAME}${CMAKE_RELEASE_POSTFIX}")
 
-# ÉèÖÃÓëQT designer ¼¯³É
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½QT designer ï¿½ï¿½ï¿½ï¿½
 SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES VS_KEYWORD "Qt4VSv1.0")
 
-# ÉèÖÃÏîÄ¿±êÇ©.
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ç©.
 SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES PROJECT_LABEL "App ${APPLICATION_NAME}")
 SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES FOLDER "App") 
  
@@ -138,7 +138,7 @@ SET_TARGET_PROPERTIES(${APPLICATION_NAME} PROPERTIES FOLDER "App")
 VIRE_TARGET_SOURCE_GROUP(${APPLICATION_NAME})
 #===================================================
 
-#Êä³öµ½ÉÏ¼¶Ä¿Â¼£¬È¡Ïûdebug, release Ä¿Â¼
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½Ä¿Â¼ï¿½ï¿½È¡ï¿½ï¿½debug, release Ä¿Â¼
 IF (MSVC_IDE) 
 	SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY  ${PROJECT_SOURCE_DIR}/bin )
 	SET_TARGET_PROPERTIES( ${APPLICATION_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin/Debug )
@@ -148,14 +148,14 @@ ENDIF()
 END_TARGET(${APPLICATION_NAME})
   
   
-# debug °²×°
+# debug ï¿½ï¿½×°
 INSTALL(
 TARGETS ${APPLICATION_NAME}
 RUNTIME DESTINATION bin/Debug
 )
 	
 
-# release °²×°
+# release ï¿½ï¿½×°
 INSTALL(
 TARGETS ${APPLICATION_NAME}
 RUNTIME DESTINATION bin/release

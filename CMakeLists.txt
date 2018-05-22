@@ -116,10 +116,6 @@ Find_Boost(BOOST_COMPONENTS #这里可以加入Boost的依赖库名，找到Boos
 	timer
 )
 #=============================================================
-SET (DEFAULT_INCLUDE_SUBDIR ${PROJECT_SOURCE_DIR}/include)
-
-#=============================================================
 # process subdirs
 ADD_SUBDIRECTORY(src)
 #=============================================================
-# Uninstall targe 卸载  
