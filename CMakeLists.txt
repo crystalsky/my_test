@@ -104,6 +104,7 @@ ELSE()
 
 ENDIF()
 
+#find the boost
 Find_Boost(BOOST_COMPONENTS #这里可以加入Boost的依赖库名，找到Boost库
     thread
     date_time
